@@ -1,0 +1,32 @@
+%---------------------------------------------------------------------------------
+% PROBLEM 5 - PART G
+%---------------------------------------------------------------------------------
+\secGR{Compensating for Non-Zero Curvature}
+One way to handle tracking in the event of non-zero (and possibly changing) curvature is to use nonlinear feedback to compensate. The yaw dynamics take the form of:
+
+\iftoggle{condensed}{\vspace*{-0.3cm}}
+
+\begin{align*}
+\frac{d \Delta \Psi}{dt} = \left( \frac{V}{L} \right) \delta - \frac{\kappa V}{1 - e \kappa}
+\end{align*}
+
+\iftoggle{condensed}{\vspace*{-0.3cm}}
+
+Compensate for the curvature term in this equation by changing the commanded steer angle to:
+
+\iftoggle{condensed}{\vspace*{-0.5cm}}
+
+\begin{align*}
+    \delta = K_{la}e_{la} + \frac{L \kappa}{1 - e \kappa},
+\end{align*}
+
+Create a function called \verb!lookahead_lateral_control_curvature! that implements this modified lookahead
+controller. Follow the \GRno{} prompts to create this function.
+
+\iftoggle{solution}{
+    \input{Solutions/Problem5/problem5g.tex}
+}
+
+\iftoggle{condensed}{}{
+    \newpage
+}

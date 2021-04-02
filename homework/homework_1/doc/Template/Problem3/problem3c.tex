@@ -1,0 +1,49 @@
+%---------------------------------------------------------------------------------
+% PROBLEM 3 - PART C
+%---------------------------------------------------------------------------------
+\secGS{Lookahead vs PD Control}
+Show that for a constant vehicle speed, the lookahead controller is equivalent to a PD controller of the form:
+
+\al{
+\delta = K_p e + K_d \frac{de}{dt}
+}
+
+Calculate the parameters $K_p$ and $K_d$ in terms of $K_{la}$ and $d_{la}$. You should see that the lookahead control law provides a simple way of scaling, or gain scheduling, proportional and derivative gains as the vehicle speed changes.
+
+\vspace*{0.5cm}
+
+\expect{Write the parameters $K_{p}$ and $K_{d}$ in terms of $K_{la}$ and $d_{la}$.}
+
+\iftoggle{condensed}{
+    \vspace*{0.5cm}
+}{
+    \subsubsection*{Solution:}
+}
+
+\iftoggle{solution}{
+    \input{Solutions/Problem3/problem3c.tex}
+    \newpage
+}
+
+
+\iftoggle{template}{
+    \vspace*{12cm}
+    \begin{solutionorbox}[1in]
+    \end{solutionorbox}
+    \newpage
+}
+
+\iftoggle{student}{
+%---------------------------------------------------------------------------------
+% STUDENT: BEGIN WORK
+%---------------------------------------------------------------------------------
+
+
+% Please box final answer
+
+%---------------------------------------------------------------------------------
+% STUDENT: END WORK
+%---------------------------------------------------------------------------------
+    \newpage
+}
+

@@ -1,0 +1,70 @@
+%---------------------------------------------------------------------------------
+% PROBLEM 3 - PART A
+%---------------------------------------------------------------------------------
+\secGS{Lookahead Controller}
+A common method for path tracking with vehicles is to use a lookahead controller. This can either look at the projected error some distance ahead on the path or, more commonly, approximate this error as a linear combination of the lateral error and heading error:
+
+\al{
+\delta &= K_{la} e_{la}\\
+e_{la} &= e + d_{la} \Delta \psi
+}
+
+Here $d_{la}$ functions as the “lookahead distance” ahead of the reference point at which the error is calculated. This is exactly the projected error on a straight road and approximately the projected error on a curved road if the curvature is not too large relative to the lookahead distance.
+
+During lecture, we also derived these equations assuming a small heading error and a small curvature:
+
+\al{
+\dot{s} &= V\\
+\dot{e} &= V\Delta\psi\\
+\dot{\Delta\psi} &= \frac{V\delta}L-\kappa V
+}
+
+Perform several Laplace transforms assuming small angles, a straight road, and \textbf{constant velocity}. Arrange this into a form where we can look at the response to the lateral error from the initial condition. In other words, calculate the relationship:
+
+\eq{
+\frac{E(s)}{e(0)}
+}
+
+The denominator of this relationship is the characteristic equation of the system that we can use to design the performance of our tracking controller.
+
+Note: \textit{Where does the initial condition $e(0)$ come from? Remember that initial conditions are a part of the
+    Laplace transformation, we just often set them to zero when forming a transfer function. Leave them in your expression
+here.}
+
+\vspace*{0.5cm}
+
+\expect{Write the resulting relationship $\frac{E(s)}{e(0)}$. Please include your work.}
+
+
+\iftoggle{condensed}{
+    \vspace*{0.5cm}
+}{
+    \newpage
+    \subsubsection*{Solution:}
+}
+
+\iftoggle{solution}{
+    \input{Solutions/Problem3/problem3a.tex}
+}
+
+\iftoggle{template}{
+        \vspace*{17cm}
+        \begin{solutionorbox}[1.5in]
+        \end{solutionorbox}
+}
+
+\iftoggle{student}{
+%---------------------------------------------------------------------------------
+% STUDENT: BEGIN WORK
+%---------------------------------------------------------------------------------
+
+
+% Please box final answer
+
+%---------------------------------------------------------------------------------
+% STUDENT: END WORK
+%---------------------------------------------------------------------------------
+}
+
+\newpage
+
