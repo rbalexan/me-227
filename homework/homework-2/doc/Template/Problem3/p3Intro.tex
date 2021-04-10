@@ -1,0 +1,23 @@
+\secPr{Evaluating our Models Against Experimental Data}
+
+Before plunging deeper into the development of vehicle dynamics models, we should see how well these simple models
+predict the measurements we can obtain from a vehicle. We have some data of Niki doing a double lane change maneuver in
+the lot off Searsville road on Stanford's campus at various speeds. A high-precision GPS/INS system in the car gives us
+accurate measurements of lateral velocity, yaw rate, lateral acceleration, and vehicle speed. We also measure steer
+angle through the actuators built into the car. In this problem, we're going to compare these measurements to what we
+predict using the models developed in class. While there are a lot of simplifications involved, you should find the
+results at least somewhat impressive. If not, chances are you have a bug somewhere...
+
+Three experiments were run, one at low speed, one at intermediate speed, and one at high speed. We have separated all of
+the data into MATLAB cell arrays, with the first cell corresponding to the low speed test, etc. 
+
+The following \GRno{} questions will walk you through modifying your simulations so that they can use recorded steer
+angle and longitudinal velocity as inputs. With this modification made, you can now compare the experimental data to
+three different models.
+
+\textit{NOTE: Though we have written our simulator to execute at 1kHz, our data logger records data on Niki at 200Hz.  In research and industry, we frequently need to resample data that has been logged. One way to address this here is to post-process our recorded data early in our script by creating two new vectors of steering angle and velocity that correspond in time to our simulation time vector. 
+You can use the MATLAB function} \verb!interp1! \textit{along with the vector of simulation time to interpolate a vector of
+steering angles and velocity from the recorded data. We have implemented this for you in \GRno{}, but it's a great trick to know if
+you work with experimental data in the future.}
+
+\vspace*{1cm}

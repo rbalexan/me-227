@@ -1,0 +1,21 @@
+%---------------------------------------------------------------------------------
+% QUESTION 2.C
+%---------------------------------------------------------------------------------
+\secGR{Simulation with Different Tire Models}
+
+Now let's compare how different tire models behave in simulation.
+Follow the prompts in \GRno{} to create a script simulating a step steer of 5 deg with the vehicle travelling at a constant longitudinal speed
+of 30\si{\m/\s}. Use the \verb!simulate_step! function from Problem 1. We have included a tested version that already
+has a tested function for the Fiala tire model as well. This way you can swap between tire models using the \verb!tire_mode! option flag input.
+
+Plot the simulated yaw rate, $r$, vs. time for both tire models on the same plot over the period of 0 to 2 seconds.
+Create similar plots for the simulated lateral velocity, $U_y$, and the simulated lateral acceleration, $a_y$.
+
+\iftoggle{solution}{
+    \input{Solutions/matlabgrader.tex}
+}
+
+\iftoggle{condensed}{}{
+    \newpage
+}
+

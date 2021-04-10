@@ -1,0 +1,31 @@
+%---------------------------------------------------------------------------------
+% QUESTION 1.C
+%--------------------------------------------------------------------------------
+\secGR{Dynamic Equations of Motion}
+
+The assumptions we made at the beginning of the problem result in a system with two state variables - the yaw rate, $r$,
+and the lateral velocity, $U_y$. You can then take the equations of motion:
+
+\al{
+    m a_y &= F_{yf} + F_{yr} \\
+    I_z \dot{r} &= aF_{yf} - bF_{yr}
+}
+
+and write them in the form
+
+\al{
+    \dot{U}_y &= \dots \\
+    \dot{r} &= \dots
+}
+
+to have two state equations.
+
+Follow the prompts in \GRno{} to create a function to calculate expressions for the vehicle state derivatives
+$\dot{U}_y$ and $\dot{r}$.
+You are to modify the state derivatives \verb!Uy_dot! and \verb!r_dot! 
+in the function template in \GRno{}.
+
+\iftoggle{solution}{
+    \input{Solutions/matlabgrader.tex}
+}
+

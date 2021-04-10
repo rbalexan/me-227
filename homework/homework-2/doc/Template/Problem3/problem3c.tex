@@ -1,0 +1,27 @@
+%---------------------------------------------------------------------------------
+% QUESTION 3.C
+%---------------------------------------------------------------------------------
+\secGR{Nonlinear Bicycle Model, Variable Speed}
+
+Finally, let's look at the difference we might get with a nonlinear tire model. Using the same variable speed scheme
+from \qrefGR{Linear Bicycle Model, Variable Speed}, set the option flag in \verb!simulate_step! to use the Fiala
+tire model instead of the linear model.
+
+Follow the prompts in \GRno{} to create a script which simulates the double lane change maneuver captured in the
+provided dataset. You should use the nonlinear bicycle model (Fiala tire model).
+
+Three experiments were run, one at low speed, one at intermediate speed, and one at high speed.  We have separated all
+of the data into MATLAB cell arrays, with the first cell corresponding to the low speed test, etc. We have trimmed the
+dataset to contain only the maneuver in each cell (trimmed out lining the car back up, etc.) Use the measured longitudinal speed in your equations of motion.
+
+Plot the yaw rate (in deg/s), lateral velocity (in m/s), and lateral acceleration (in \si{\m/\s^2}) from each
+experimental run together with the corresponding simulated values to see how well your model predicts the vehicle's
+behavior.
+
+\iftoggle{solution}{
+    \input{Solutions/matlabgrader.tex}
+}
+
+\iftoggle{condensed}{}{
+    \newpage
+}

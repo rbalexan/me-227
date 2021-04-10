@@ -1,0 +1,23 @@
+%---------------------------------------------------------------------------------
+% QUESTION 1.A
+%---------------------------------------------------------------------------------
+\secGR{Understeer Gradient}
+
+To give our simulation results later in the problem a little more context, let's find Niki's understeer gradient.
+
+Follow the prompts in \GRno{} to create a script to calculate Niki's understeer gradient. Find the understeer gradient
+in units of \si{\radian/\m/\s^2}, then find the understeer gradient in units of deg\si{/\g}. Is Niki understeering,
+oversteering, or neutral steering?
+
+Use the tire parameters \verb!f_tire.Ca_lin! and \verb!r_tire.Ca_lin!
+for the front and rear cornering stiffnesses, respectively.
+
+You are to modify the understeer gradient outputs \verb!K_radpmps2! and \verb!K_degpg! in the function template in \GRno{}.
+Additionally, uncomment your choice of understeering, oversteering, or neutral steering.
+
+\vspace*{0.5cm}
+
+\iftoggle{solution}{
+    \input{Solutions/matlabgrader.tex}
+}
+

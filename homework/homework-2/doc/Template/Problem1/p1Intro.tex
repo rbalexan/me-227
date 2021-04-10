@@ -1,0 +1,21 @@
+\secPr{The Bicycle Model with Linear Tires}
+
+Over the course of the quarter, we will develop increasingly detailed models of vehicle motion using a straightforward Eulerian integration scheme you will code in MATLAB.  
+Last week, you implemented a simulator in \GRno{} to look at the kinematic model and path following. 
+This week, we will use the same technique to implement a simple form of the bicycle model developed in class (though not
+yet trying to follow a path with it). For the rest of \textbf{Problem 1}, assume the following holds:
+
+\begin{itemize}
+    \item The vehicle moves at constant longitudinal speed ($\dot{U}_x = 0$)
+    \item Small angle approximations are appropriate
+    \item The tire forces are linearly related to slip angles through the cornering stiffness
+\end{itemize}
+
+When writing functions and running simulations, use the set of parameters given to you for Niki. These will be available
+in each \GRno{} problem where they are appropriate, and they are given in Appendix \ref{appendix:Vehicle Parameters} and
+\ref{appendix:Tire Parameters} at the end of this document.
+
+Problem 1 contains most of the coding problems in the assignment. It may seem very long, but you will be able to re-use
+most of these functions for the rest of the assignment.
+
+\vspace*{0.5cm}

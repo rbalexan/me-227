@@ -1,0 +1,25 @@
+%---------------------------------------------------------------------------------
+% QUESTION 1.E
+%--------------------------------------------------------------------------------
+\secGR{Simulating a Step Steer at Various Speeds}
+
+Follow the prompts in \GRno{} to create a script to simulate the response of your model with linear tires to a step
+steer input of 5 deg (in other words, the initial conditions of the vehicle are travelling straight ahead and the steer
+angle is set at 5 deg throughout the simulation) at speeds of 10\si{\m/\s}, 20\si{\m/\s}, and 30\si{\m/\s}.
+
+We have split up the data into cell arrays, with cell 1 corresponding to the 10\si{\m/\s} run, etc. If you're not familiar
+with MATLAB cells, you access them using bracket notation like \verb!ux_mps_{1}!. Each cell holds a vector of data
+where each element represents one time step. To access a specific time step during a specific experiment you can use
+\verb!ux_mps_{1}(20)! which would give you the longitudinal velocity at time step 20 during the 10\si{\m/\s} simulation.
+The MATLAB Documentation is very good if you are still unsure about how to use cell arrays.
+
+Plot the simulated yaw rate, $r$, vs. time for all of the speeds on the same plot over the period of 0 to 2 seconds.
+Create similar plots for the simulated lateral velocity, $U_y$, and the simulated lateral acceleration, $a_y$.
+
+\iftoggle{solution}{
+    \input{Solutions/matlabgrader.tex}
+}
+
+\iftoggle{condensed}{}{
+    \newpage
+}

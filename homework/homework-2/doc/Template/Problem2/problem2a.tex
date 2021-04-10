@@ -1,0 +1,16 @@
+%---------------------------------------------------------------------------------
+% QUESTION 2.A
+%---------------------------------------------------------------------------------
+\secGR{Nonlinear Tire Model}
+
+Follow the prompts on \GRno{} to create a function to calculate the lateral force for one tire, $F_y$, using the \ubf{Fiala tire model} discussed in class.
+Using this model, the force at a given tire is a function of the slip angle, $\alpha$, and four parameters: 
+the cornering stiffness $C_y$, the normal load $W$, the peak coefficient of friction $\mu$, and the sliding 
+coefficitient of friction $\mu_s$. Use the parameters \verb!tire.Cy!, \verb!tire.mu!, and \verb!tire.mu_s!
+for the cornering stiffness, peak friction, and sliding friction, respectively. You are to modify the force output
+\verb!F_y! in the function template on \GRno{}.
+
+\iftoggle{solution}{
+    \input{Solutions/matlabgrader.tex}
+}
+

@@ -1,0 +1,33 @@
+%---------------------------------------------------------------------------------
+% QUESTION 1.D
+%--------------------------------------------------------------------------------
+\secGR{Taking a Single Time Step in Simulation}
+
+To effectively simulate a vehicle's dynamics, you need to do the following things in order at each time step:
+
+\begin{enumerate}
+    \item Calculate slip angles from vehicle states and the steer angle
+    \item Calculate tire forces from slip angles
+    \item Calculate vehicle state derivatives from equations of motion using current states and tire forces
+    \item Update the vehicle states (and steer angle if necessary)
+\end{enumerate}
+
+Follow the prompts in \GRno{} to create a function to take one time step in your simulation, updating the vehicle states
+$U_y$ and $r$ (we're only looking at velocity states in this assignment). 
+Calculate the lateral acceleration $a_y$ in this function as well. We'll use it later in our analysis. We have included
+tested versions of the functions you have written so far and the \verb!integrate_euler! function you wrote last week for
+you to use here. 
+
+To make this function useful in later parts of the assignment, we want to be able to change tire models simply. To do
+this we're including an option flag \verb!tire_mode! as an input to the function. This will check for either
+\verb!'linear'! or \verb!'fiala'! and use the respective model. We are only using the linear tire model in this
+assignment, so you only need to fill in the section for \verb!'linear'! for now. 
+
+You are to modify the vehicle states and lateral acceleration \verb!Uy_1!, \verb!r_1!, and \verb!a_y! in the function template in \GRno{}.
+
+\iftoggle{solution}{
+    \input{Solutions/matlabgrader.tex}
+}
+
+\newpage
+

@@ -1,0 +1,28 @@
+%---------------------------------------------------------------------------------
+% QUESTION 3.B
+%---------------------------------------------------------------------------------
+\secGR{Linear Bicycle Model, Variable Speed}
+
+It is possible to allow the speed to vary in your simulation. We are going to assume that we still have two state
+variables (yaw rate and lateral velocity) and simply update the longitudinal velocity with measured data at every time
+step.
+
+\textit{NOTE: Here we're fixing the mismatch in timing with the recorded longitudinal velocity in exactly the same way
+we handled steer angle data before.}
+
+Follow the prompts in \GRno{} to create a script which simulates the double lane change maneuver captured in the
+provided dataset. You should still use the linear bicycle model (linear tire model).
+
+Three experiments were run, one at low speed, one at intermediate speed, and one at high speed.  We have separated all
+of the data into MATLAB cell arrays, with the first cell corresponding to the low speed test, etc. We have trimmed the
+dataset to contain only the maneuver in each cell (trimmed out lining the car back up, etc.) Use the measured longitudinal speed in your equations of motion in
+this simulation instead of the constant speed you assumed previously.
+
+Plot the yaw rate (in deg/s), lateral velocity (in m/s), and lateral acceleration (in \si{\m/\s^2}) from each
+experimental run together with the corresponding simulated values to see how well your model predicts the vehicle's
+behavior.
+
+\iftoggle{solution}{
+    \input{Solutions/matlabgrader.tex}
+}
+
