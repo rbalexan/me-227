@@ -1,0 +1,79 @@
+\secGS{Calculating Dynamic Properties}
+
+For each vehicle, calculate the characteristic speed and then the steady-state yaw gain, natural frequency and damping ratio at a speed of 65mph (be sure to convert to m/s first). The properties are given again below:
+
+\begin{center}
+    \begin{tabular}{|c|c|c|}
+        \hline
+         & Car A & Car B \\
+        \hline
+        Wheelbase & 2.4 m & 2.4 m \\
+        Mass & 1600 kg & 1600 kg \\
+        $I_z$ & 2200 kg$\cdot$ m$^2$ & 2200 kg$\cdot$ m$^2$ \\
+        Weight Distribution & 60/40 & 65/35 \\
+        Tire Cornering Stiffness & 100,000 N/rad & 150,000 N/rad \\
+        \hline
+    \end{tabular}
+\end{center}
+
+\textbf{Hints:
+\begin{itemize}
+    \item Make sure your understeer gradient, $K$, is in units of rad/m/s$^2$.
+    \item You can use Matlab online (matlab.mathworks.com) to write reusable functions to reduce the risk of algebra mistakes.
+\end{itemize}
+}
+
+\iftoggle{condensed}{}{
+    \vspace*{0.5cm}
+}
+
+\expect{Calculate the characteristic speed, steady state yaw gain, natural frequency, and damping ratio. Put your final solutions below.}
+
+\iftoggle{condensed}{
+    \vspace*{0.5cm}
+}{
+    \subsubsection*{Solution:}
+}
+
+\iftoggle{solution}{
+    \input{Solutions/Problem1/problem1c.tex}
+    \newpage
+}
+
+\iftoggle{template}{
+        \vspace*{10cm}
+        \begin{solutionorbox}[1.5in]
+        \end{solutionorbox}
+        \newpage
+}
+
+\iftoggle{student}{
+%---------------------------------------------------------------------------------
+% STUDENT: BEGIN WORK
+%---------------------------------------------------------------------------------
+
+% Please box final answer
+\begin{center}
+    \setlength{\tabcolsep}{36pt}
+    \begin{tabular}{|c|c|c|}
+        \hline
+         & Car A & Car B \\
+        \hline
+        Characteristic speed &  &  \\
+        Steady-state yaw gain &  &   \\
+        $\omega_n$ &   &   \\
+        $\zeta$ &  &  \\
+        % Characteristic speed & m/s &  m/s \\
+        % Steady-state yaw gain &  s$^{-1}$ &  s$^{-1}$ \\
+        % $\omega_n$ &  rad/s &  rad/s \\
+        % $\zeta$ &  &  \\
+        \hline
+    \end{tabular}
+\end{center}
+
+%---------------------------------------------------------------------------------
+% STUDENT: END WORK
+%---------------------------------------------------------------------------------
+    \newpage
+}
+

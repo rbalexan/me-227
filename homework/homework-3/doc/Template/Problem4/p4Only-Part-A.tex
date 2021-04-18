@@ -1,0 +1,63 @@
+\secPr{Lateral Velocity as a Function of Speed (Gradescope)}
+
+The lateral velocity can be a little harder to understand intuitively than the yaw rate (which is just angular velocity).  In a steady corner, the lateral velocity describes the orientation of the vehicle centerline relative to the circular path the vehicle is taking.  This can be important to understand for automated vehicles since sensors are often attached to the vehicle and if the vehicle is not pointing straight along the path, we will need to compensate in some way.  In the last assignment, you noticed that the lateral velocity of the vehicle changes sign as the speed increases.  Let’s look at this in a little more detail.
+
+\iftoggle{condensed}{}{
+    \vspace*{0.5cm}
+}
+
+The transfer function for lateral velocity with respect to steer angle is given by:
+\begin{align*}
+\frac{U_y(s)}{\Delta(s)} = \frac{\frac{C_{\alpha f}I_z}{m}s+\frac{LbC_{\alpha r}C_{\alpha f}}{mU_x}-aC_{\alpha f}U_x}{
+I_zs^2 + \left(\frac{I_z(C_{af}+C_{ar})}{mU_x} + \frac{a^2C_{af}+b^2C_{ar}}{U_x}\right)s + 
+\left(\frac{C_{af}C_{ar}L^2}{mU_x^2} +bC_{ar}-aC_{af}\right)}
+\end{align*}
+The denominator of this transfer function is the same as the yaw rate transfer function we covered in class. This should make sense, given the relationship between steer angle and these state. In this problem you will use this function to relate lateral and longitudinal speed.
+
+Please answer the following questions:
+\begin{itemize}
+	    \item What is the steady-state lateral velocity for a step steer input of magnitude $\delta$?  
+	    \item At what longitudinal speed does the vehicle produce a zero lateral velocity? 
+	    \item If the vehicle is in a left hand turn (positive steer angle), what sign does the lateral velocity have below this speed?  
+	    \item What sign does it have above this speed?  
+\end{itemize}
+
+You should see a similarity between the low speed behavior and the kinematic model behavior you derived on the first homework assignment.  At higher speeds, slip angles become important and the dynamic model differs from the kinematic model in terms of the vehicle’s orientation relative to the path.
+
+\iftoggle{condensed}{}{
+    \vspace*{0.5cm}
+}
+
+\expect{Write your answers to the questions below.}
+
+\iftoggle{condensed}{
+    \vspace*{0.5cm}
+}{
+    \subsubsection*{Solution:}
+}
+
+\iftoggle{solution}{
+    \input{Solutions/Problem4/problem4b.tex}
+    \newpage
+}
+
+\iftoggle{template}{
+        \vspace*{12cm}
+        \begin{solutionorbox}[1.5in]
+        \end{solutionorbox}
+        \newpage
+}
+
+\iftoggle{student}{
+%---------------------------------------------------------------------------------
+% STUDENT: BEGIN WORK
+%---------------------------------------------------------------------------------
+
+
+% Please box final answer
+
+%---------------------------------------------------------------------------------
+% STUDENT: END WORK
+%---------------------------------------------------------------------------------
+    \newpage
+}

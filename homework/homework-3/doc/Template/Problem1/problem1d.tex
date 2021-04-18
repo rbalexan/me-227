@@ -1,0 +1,60 @@
+\secGS{Comparison to the Kinematic Model}
+
+For each vehicle, you calculated the steady-state yaw gain. Calculate the steady-state yaw gain predicted by the kinematic model at 65mph (hint: it is the same for both vehicles). You can use a small angle assumption. The properties are given again below:
+
+\begin{center}
+    \begin{tabular}{|c|c|c|}
+        \hline
+         & Car A & Car B \\
+        \hline
+        Wheelbase & 2.4 m & 2.4 m \\
+        Mass & 1600 kg & 1600 kg \\
+        $I_z$ & 2200 kg$\cdot$ m$^2$ & 2200 kg$\cdot$ m$^2$ \\
+        Weight Distribution & 60/40 & 65/35 \\
+        Tire Cornering Stiffness & 100,000 N/rad & 150,000 N/rad \\
+        \hline
+    \end{tabular}
+\end{center}
+
+How do the steady-state yaw gains predicted by each model compare?
+
+\iftoggle{condensed}{}{
+    \vspace*{0.5cm}
+}
+
+\expect{Calculate the kinematic model gain. Explain how it is different from the gains you calculated. Put your answers below.}
+
+\iftoggle{condensed}{
+    \vspace*{0.5cm}
+}{
+    \subsubsection*{Solution:}
+}
+
+\iftoggle{solution}{
+    \input{Solutions/Problem1/problem1d.tex}
+    \newpage
+}
+
+\iftoggle{template}{
+        \vspace*{9cm}
+        \begin{solutionorbox}[1.5in]
+        \end{solutionorbox}
+        \newpage
+}
+
+\iftoggle{student}{
+%---------------------------------------------------------------------------------
+% STUDENT: BEGIN WORK
+%---------------------------------------------------------------------------------
+
+% Please box final answer
+Kinematic model yaw gain: 
+
+Comparison:
+
+%---------------------------------------------------------------------------------
+% STUDENT: END WORK
+%---------------------------------------------------------------------------------
+    \newpage
+}
+

@@ -1,0 +1,143 @@
+%---------------------------------------------------------------------------------
+% HEADER
+%---------------------------------------------------------------------------------
+% Stanford - ME227 Spring 2021
+% Instructor: Chris Gerdes
+% TA's: Peter Schleede, John Talbot
+%
+% This is a borrowed LaTeX template file for lecture notes for CS267,
+% Applications of Parallel Computing, UCBerkeley EECS Department.
+%
+% PLEASE MODIFY THIS TEMPLATE ONLY WHERE MARKED WITH "STUDENT:"
+%
+% The only parts that need to be modified in this document
+% are found in each of the invididual prompt files which are found in problem folders (e.g. Problem1/problem1a.tex). 
+%
+
+
+\documentclass[10pt]{exam}
+%\printanswers
+
+%---------------------------------------------------------------------------------
+% ADD PACKAGES
+%---------------------------------------------------------------------------------
+% Built in packages
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage[title]{appendix}
+\usepackage{fmtcount}
+\usepackage[numbered,framed]{matlab-prettifier}
+\usepackage{siunitx}
+\usepackage{xcolor}
+\usepackage{xpatch}
+\usepackage{etoolbox}
+\usepackage{graphicx}
+\usepackage{hyperref}
+
+%Disable all warnings issued by latex starting with "You have..."
+\usepackage{silence}
+\WarningFilter{latex}{You have requested package}
+
+% Custom packages
+\usepackage{Utility/undertilde}
+
+% Custom functions and macros
+\input{Utility/utils.tex}
+
+%---------------------------------------------------------------------------------
+% BEGIN DOCUMENT & INTRO
+%---------------------------------------------------------------------------------
+\begin{document}
+\input{Body/intro.tex}
+
+% Select mode (select only one at a time)
+%\template
+% \condensed
+\student
+% \solutions
+
+%----------------------------------
+%        PROBLEM 1
+%----------------------------------
+\input{Template/Problem1/p1Intro.tex}
+
+% Student Prompts and Responses
+\input{Template/Problem1/problem1a.tex}
+\input{Template/Problem1/problem1b.tex}
+\input{Template/Problem1/problem1c.tex}
+\input{Template/Problem1/problem1d.tex}
+\input{Template/Problem1/problem1e.tex}
+
+\newpage
+
+%----------------------------------
+%        PROBLEM 2
+%----------------------------------
+\input{Template/Problem2/p2Intro.tex}
+
+% Student Prompts and Responses
+\input{Template/Problem2/problem2a.tex}
+\input{Template/Problem2/problem2b.tex}
+
+\newpage
+
+%----------------------------------
+%        PROBLEM 3
+%----------------------------------
+\input{Template/Problem3/p3Intro.tex}
+
+% Student Prompts and Responses
+\input{Template/Problem3/problem3a.tex}
+\input{Template/Problem3/problem3b.tex}
+\input{Template/Problem3/problem3c.tex}
+
+\newpage
+
+%----------------------------------
+%        PROBLEM 4
+%----------------------------------
+\input{Template/Problem4/p4Only-Part-A.tex}
+% \input{Template/Problem4/p4Intro.tex}
+
+% Student Prompts and Responses
+% \input{Template/Problem4/problem4a.tex}
+% \input{Template/Problem4/problem4b.tex}
+
+\newpage
+
+%----------------------------------
+%        PROBLEM 5
+%----------------------------------
+\input{Template/Problem5/p5Intro.tex}
+
+% Student Prompts and Responses
+\input{Template/Problem5/problem5a.tex}
+\input{Template/Problem5/problem5b.tex}
+\input{Template/Problem5/problem5c.tex}
+
+\newpage
+
+%----------------------------------
+%        PROBLEM 6
+%----------------------------------
+% \input{Template/Problem6/p6Intro.tex}
+
+% % Student Prompts and Responses
+% \input{Template/Problem6/problem6a.tex}
+% \input{Template/Problem6/problem6b.tex}
+% \input{Template/Problem6/problem6c.tex}
+
+% \newpage
+
+%----------------------------------
+%        PROBLEM 7
+%----------------------------------
+% \input{Template/Problem7/p7Intro.tex}
+
+% % Student Prompts and Responses
+% \input{Template/Problem7/problem7a.tex}
+% \input{Template/Problem7/problem7b.tex}
+
+% \newpage
+
+\end{document}

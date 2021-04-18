@@ -1,0 +1,15 @@
+\secPr{Stabilizing the Oversteering Car}
+
+While an oversteering car can become unstable beyond its critical speed, a driver can stabilize it. We'll see if a simple feedback law involving the driver can prove this mathematically. Assume that the driver is trying to track a desired yaw rate and can sense the actual yaw rate. Assume also that the driver can respond without delay and turns the wheels in proportion to the difference between the desired and actual yaw rates, using the gain, $K_{\text{driver}}$. In other words, the driver input as a function of time looks like:
+\begin{align*}
+    \delta(t) &= K_{\text{driver}}(r_{\text{des}}(t)-r(t))
+\end{align*}
+Or, Laplace transforming, our model of the "perfect" driver can be written as:
+\begin{align*}
+    \Delta(s) &= K_{\text{driver}}(R_{\text{des}}(s)-R(s))
+\end{align*}
+
+
+\iftoggle{condensed}{}{
+    \newpage
+}

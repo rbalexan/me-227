@@ -1,0 +1,57 @@
+%---------------------------------------------------------------------------------
+% PROBLEM 5 - PART A
+%---------------------------------------------------------------------------------
+\secGS{Closed Loop Transfer Function}
+
+Eliminate the steering angle and show that the closed-loop transfer function of the driver and vehicle combined from desired yaw rate to yaw rate is:
+\begin{align*}
+\frac{R(s)}{R_{des}(s)} = \frac{K_{driver}\left(aC_{af}s+\frac{LC_{af}C_{ar}}{mU_x}\right)}{
+I_zs^2 + \left(\frac{I_z(C_{af}+C_{ar})}{mU_x} + \frac{a^2C_{af}+b^2C_{ar}}{U_x} + aC_{af}K_{driver}\right)s + 
+\left(\frac{C_{af}C_{ar}L^2}{mU_x^2} +bC_{ar}-aC_{af} + K_{driver}\frac{LC_{af}C_{ar}}{mU_x}\right)}
+\end{align*}
+
+\textit{Hint:}
+You can make the algebra simpler on yourself by writing the transfer function as
+\begin{align*}
+    \frac{R(s)}{\Delta(s)} &= \frac{ls+m}{ns^2+ps+q}
+\end{align*}
+and doing the algebra before subbing the coefficients back in.
+
+\iftoggle{condensed}{}{
+    \vspace*{0.5cm}
+}
+
+\expect{Derive the closed loop transfer function given above.}
+
+\iftoggle{condensed}{
+    \vspace*{0.5cm}
+}{
+    \subsubsection*{Solution:}
+}
+
+\iftoggle{solution}{
+    \input{Solutions/Problem3/problem3a.tex}
+    \newpage
+}
+
+\iftoggle{template}{
+        \vspace*{8cm}
+        \begin{solutionorbox}[1.5in]
+        \end{solutionorbox}
+        \newpage
+}
+
+\iftoggle{student}{
+%---------------------------------------------------------------------------------
+% STUDENT: BEGIN WORK
+%---------------------------------------------------------------------------------
+
+
+% Please box final answer
+
+%---------------------------------------------------------------------------------
+% STUDENT: END WORK
+%---------------------------------------------------------------------------------
+    \newpage
+}
+
