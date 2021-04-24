@@ -1,0 +1,10 @@
+*.swp
+*.aux
+*.fdb_latexmk
+*.fls
+*.log
+*.pdf
+*.gz
+*.m~
+*.out
+HW?_Latex.zip

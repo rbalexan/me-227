@@ -1,0 +1,48 @@
+\secPr{Understanding the Lookahead Controller}
+
+In this problem, we will analyze the lookahead controller and look at how the system poles change as we change parameters in the controller. We will use the form of the lookahead controller derived in class (which is slightly different than the version used in the kinematic model since we now consider tire stiffness)
+
+\al{
+    \delta = \frac{-\Kla \left(e + \xla \Delta\Psi\right)}{C_{af}}
+}
+
+With this controller, the system becomes
+
+\al{
+    \frac{d}{dt}
+    \begin{bmatrix}
+        e \\ \edot{} \\ \dpsi{} \\ \dpsidot{}
+    \end{bmatrix}
+    %
+    &=
+    %
+    \begin{bmatrix}
+    0 & 1 & 0 & 0 \\
+    %
+    -\frac{\Kla}{m}   &   
+    -\frac{(\Caf + \Car)}{m U_x}    &   
+    \frac{(\Caf + \Car)}{m} - \frac{\Kla \xla}{m}   &
+    \frac{(-a\Caf + b\Car)}{m U_x} \\
+    %
+    0 & 0 & 0 & 1 \\
+    %
+    -\frac{\Kla a}{I_z}   &
+    \frac{(b\Car - a\Caf)}{I_z U_x}   &
+    \frac{(a\Caf - b\Car)}{I_z} - \frac{\Kla a \xla}{I_z}   &
+    -\frac{\left(a^2\Caf + b^2\Car\right)}{I_z U_x} \\
+    \end{bmatrix}
+    %
+    %
+    \begin{bmatrix}
+        e \\ \edot{} \\ \dpsi{} \\ \dpsidot{}
+    \end{bmatrix}
+}
+
+This system describes the closed loop response of the vehicle using the lookahead controller listed above. You should use this system of equations for all of the questions in \pref{Understanding the Lookahead Controller}.
+
+\iftoggle{condensed}{
+    \vspace*{0.5cm}
+}{
+    \newpage
+}
+

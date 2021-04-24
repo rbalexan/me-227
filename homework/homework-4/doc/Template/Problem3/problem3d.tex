@@ -1,0 +1,68 @@
+%---------------------------------------------------------------------------------
+% QUESTION 3.D
+%---------------------------------------------------------------------------------
+\secMOGS{Implementing Active Lane Assist and Cruise Control}
+
+In previous homeworks, we have assumed that the vehicle is moving at a constant speed. Let's implement a simple cruise control function in your simulation that generates longitudinal force to track a desired longitudinal velocity. Let 
+\al{
+    F_{x,total} = K_{long}(U_{x,des} - U_x)
+}
+
+so we have a simple proportional controller that will generate a force in response to a difference in the actual and
+desired longitudinal speeds. Tune the gain $K_{long}$ to produce a 0.05 g longitudinal acceleration in
+response to a 1 \si{\m/\s} difference in the desired and actual speeds. 
+
+Additionally, let's implement an active lane assist that helps the driver remain close to a desired path.  We'll use the same lookahead controller from \pref{Understanding the Lookahead Controller} and
+\pref{Lookahead Control of an Oversteering Car} with a gain $\Kla = 1750$ \si{\N/\m} and lookahead distance $\xla =
+20$ \si{\m}. Set your desired speed to $U_{x,des} = 31$ \si{\m/\s} in your simulator script.
+
+Use the code template \verb!me227_controller! to implement both the lateral and longitudinal controller. \textbf{Do not
+change the inputs or outputs of this function!} We will use this function when implementing your controllers both in
+simulation and on Niki. We have copied the vehicle parameter structure that you're used to into the function, so you can
+access those variables as you normally would.
+
+Let's simulate Niki with these controllers without a driver correctly intervening to aid the active lane assist. Simulate Niki with these controllers implemented on the straight road from 0 to 20 seconds.
+Start with initial conditions $e = 1$ m, $\dpsi = 0$ rad, $s = 0$ m, $r = 0$ rad/s, $U_y = 0$ m/s, and $U_x = 27$ m/s.
+
+Create plots of all six of our system states ($r$, $U_x$, $U_y$, $\dpsi$, $s$, and $e$), and submit them to gradescope.
+
+\textit{NOTE: You can save figures from \MOno{} as either image files (.png, .jpg, etc.) or as a .pdf. You can then add
+    these directly to your submission if you're using word or Latex, or you can use a program like PDFShuffler or
+    PDFSam to add these pages in after you have a .pdf to submit, or you can use the separate images upload option of Gradescope to upload these images and pictures of your
+other answers individually. If you are having trouble, please contact the teaching team so we can help out.}
+
+\vspace*{0.5cm}
+
+\expect{Submit plots of all vehicle states.}
+
+\iftoggle{condensed}{
+    \vspace*{0.5cm}
+}{
+    \subsubsection*{Results:}
+}
+
+\iftoggle{solution}{
+    \input{Solutions/Problem3/problem3d.tex}
+    \newpage
+}
+
+\iftoggle{template}{
+    \begin{solutionorbox}[3.5in]
+    \end{solutionorbox}
+    \newpage
+}
+
+\iftoggle{student}{
+%---------------------------------------------------------------------------------
+% STUDENT: BEGIN WORK
+%---------------------------------------------------------------------------------
+
+
+% Please box final answer
+
+%---------------------------------------------------------------------------------
+% STUDENT: END WORK
+%---------------------------------------------------------------------------------
+    \newpage
+}
+

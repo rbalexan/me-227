@@ -1,0 +1,19 @@
+%---------------------------------------------------------------------------------
+% QUESTION 1.A
+%---------------------------------------------------------------------------------
+\secGR{Determining an Appropriate Lookahead Gain}
+
+Let's start with the "lookdown" controller ($x_{la} = 0$). Our first step is to determine a gain that seems physically
+reasonable.
+
+Follow the prompts in \GRno{} to create a script to calculate $K_{la}$ such that our controller produces a steer 
+angle of 3 degrees when the lateral error is one meter and the vehicle is pointed straight along the path.
+
+You are to modify the lookahead gain, \verb!K_la!, to the appropriate value.
+
+\vspace*{0.5cm}
+
+\iftoggle{solution}{
+    \input{Solutions/matlabgrader.tex}
+}
+

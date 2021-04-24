@@ -1,0 +1,33 @@
+%---------------------------------------------------------------------------------
+% QUESTION 3.C
+%---------------------------------------------------------------------------------
+\secMOGR{Simulator Script}
+
+In this problem you will use your experience over the past few weeks to build your own simulator script from scratch.
+Start with the simulator template in the \verb!ME227Simulator.m! file.
+Use the \verb!simulate_step! function from question \qrefMOGR{Simulate Step Function} to propogate the vehicle states
+given your current states and command inputs. In the next few questions, we will implement feedback controllers to
+generate command inputs. For now, make your commanded lateral force 0 ($F_x = 0$ N) and steer angle 
+-0.5 deg ($\delta = -0.5$ deg). 
+
+Run this simulation from 0 to 8 seconds with the straight road by uncommenting the correct road parameters and commenting out the others at
+the top of the code template. 
+Start with initial conditions $e = 1$ m, $\dpsi = 0$ rad, $s = 0$ m, $r = 0$ rad/s, $U_y = 0$ m/s, and $U_x = 10$ m/s.
+
+Once you have everything running, copy and paste your script into \GRno{} to validate your results. 
+
+\textbf{\textit{Important: Do not change the names of the vehicle states in the simulation template, we will use these to
+validate your results in \GRno{}.}}
+
+\textbf{\textit{Important: You must comment out the lines containing "}}
+\verb!clear; clc; close all! 
+\textbf{\textit{" and the line calling
+the "}}
+\verb!animate! 
+\textbf{\textit{" function or your solution will not pass the \GRno{} tests.}}
+
+\iftoggle{solution}{
+    \input{Solutions/matlabgrader.tex}
+}
+
+\newpage

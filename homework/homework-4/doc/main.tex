@@ -1,0 +1,133 @@
+%---------------------------------------------------------------------------------
+% HEADER
+%---------------------------------------------------------------------------------
+% Stanford - ME227 Spring 2021
+% Instructor: Chris Gerdes
+% TA's: Peter Schleede, John Talbot
+%
+% This is a borrowed LaTeX template file for lecture notes for CS267,
+% Applications of Parallel Computing, UCBerkeley EECS Department.
+%
+% PLEASE MODIFY THIS TEMPLATE ONLY WHERE MARKED WITH "STUDENT:"
+%
+% The only parts that need to be modified in this document
+% are found in each of the invididual prompt files which are found in problem folders (e.g. Problem1/problem1a.tex). 
+%
+
+
+\documentclass[10pt]{exam}
+
+%---------------------------------------------------------------------------------
+% ADD PACKAGES
+%---------------------------------------------------------------------------------
+% Built in packages
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage[title]{appendix}
+\usepackage{empheq}
+\usepackage{fmtcount}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage[numbered,framed]{matlab-prettifier}
+\usepackage{minibox}
+\usepackage{siunitx}
+\usepackage{stackengine}
+\usepackage{xcolor}
+\usepackage{xpatch}
+
+%Disable all warnings issued by latex starting with "You have..."
+\usepackage{silence}
+\WarningFilter{latex}{You have requested package}
+
+% Custom packages
+\usepackage{Utility/undertilde}
+
+% Custom functions and macros
+\input{Utility/utils.tex}
+
+% Select mode (select only one at a time)
+%\template
+%\condensed
+%\solutions
+\student
+
+%---------------------------------------------------------------------------------
+% BEGIN DOCUMENT & INTRO
+%---------------------------------------------------------------------------------
+\begin{document}
+\input{Body/intro.tex}
+
+%---------------------------------------------------------------------------------
+% PROBLEM 0
+%---------------------------------------------------------------------------------
+% Problem Intro
+\setcounter{section}{-1}
+\input{Template/Problem0/problem0.tex}
+
+\newpage
+
+%---------------------------------------------------------------------------------
+% PROBLEM 1
+%---------------------------------------------------------------------------------
+% Problem Intro
+\input{Template/Problem1/p1Intro.tex}
+
+% Student Prompts and Responses
+\input{Template/Problem1/problem1a.tex}
+\input{Template/Problem1/problem1b.tex}
+\input{Template/Problem1/problem1c.tex}
+\input{Template/Problem1/problem1d.tex}
+\input{Template/Problem1/problem1e.tex}
+\input{Template/Problem1/problem1f.tex}
+
+\newpage
+
+%---------------------------------------------------------------------------------
+% PROBLEM 2
+%---------------------------------------------------------------------------------
+% Problem Intro
+\input{Template/Problem2/p2Intro.tex}
+
+% Student Prompts and Responses
+\input{Template/Problem2/problem2a.tex}
+\input{Template/Problem2/problem2b.tex}
+\input{Template/Problem2/problem2c.tex}
+\input{Template/Problem2/problem2d.tex}
+\input{Template/Problem2/problem2e.tex}
+
+\newpage
+
+%---------------------------------------------------------------------------------
+% PROBLEM 3
+%---------------------------------------------------------------------------------
+% Problem Intro
+\input{Template/Problem3/p3Intro.tex}
+
+% Student Prompts and Responses
+\input{Template/Problem3/problem3a.tex}
+\input{Template/Problem3/problem3b.tex}
+\input{Template/Problem3/problem3c.tex}
+\input{Template/Problem3/problem3d.tex}
+\input{Template/Problem3/problem3e.tex}
+\input{Template/Problem3/problem3f.tex}
+
+\newpage
+
+%---------------------------------------------------------------------------------
+% REMARKS
+%---------------------------------------------------------------------------------
+\iftoggle{solution}{
+    \input{Solutions/remarks.tex}
+    \newpage
+}
+
+%---------------------------------------------------------------------------------
+% APPENDICES
+%---------------------------------------------------------------------------------
+\appendix
+\input{Body/appendixA.tex}
+\input{Body/appendixB.tex}
+\input{Body/appendixC.tex}
+
+
+\end{document}

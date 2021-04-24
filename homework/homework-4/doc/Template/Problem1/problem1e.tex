@@ -1,0 +1,41 @@
+%---------------------------------------------------------------------------------
+% QUESTION 1.E
+%---------------------------------------------------------------------------------
+\secGR{Simulating Different Lookahead Gains}
+
+Let's see how well the predictions from \qrefGS{Lookahead Gain Pole Position Analysis} match the system's simulated
+response.
+
+Follow the prompts in \GRno{} to create a script to simulate the system response using lookahead gains of 1,000
+\si{\N/\m} and 10,000 \si{\N/\m}. Keep the lookahead distance at 10 \si{\m}, and the speed at 15 \si{\m/\s}. Simulate
+the responses for 10 seconds each. Plot the lateral error as a function of time for each of the lookahead gains. Begin
+with an initial error of 1 \si{\m}, the vehicle pointing straight along the path, and with $\edot=0$ and $\dpsidot = 0$.
+
+Because our system is in a convenient state-space form, we can use the built-in MATLAB function \verb$lsim$
+to easily simulate our system. To do this we need to create a system object using \verb$ss$. Because we only want to
+look at the behavior of $e$ we can set the output matrix $C$ to output $e$ alone like this:
+
+\al{
+    C &=
+    \begin{bmatrix}
+    1 & 0 & 0 & 0
+    \end{bmatrix}
+}
+
+You can read more about how to implement these functions in the MATLAB documentation here:
+
+\href{https://www.mathworks.com/help/control/ref/lsim.html}{\color{blue}\textit{MATLAB lsim Documentation Page}} and 
+\href{https://www.mathworks.com/help/control/ref/ss.html}{\color{blue}\textit{MATLAB ss Documentation Page.}}
+
+\textit{NOTE: You can copy your state matrix from 
+\qrefGR{Varying Lookahead Gain} here and in
+subsequent problems where the system dynamics don't change. For some reason using Ctrl-C and Ctrl-V seems to work more
+consistently than right-clicking and selecting copy and paste.}
+\vspace*{0.5cm}
+
+\iftoggle{solution}{
+    \input{Solutions/matlabgrader.tex}
+}
+
+\newpage
+

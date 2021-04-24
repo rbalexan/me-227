@@ -1,0 +1,22 @@
+%---------------------------------------------------------------------------------
+% QUESTION 3.A
+%---------------------------------------------------------------------------------
+\secMOGR{Implementing A Nonlinear Bicycle Model}
+
+Using the code template provided, implement a function \verb!nonlinear_bicycle_model! that takes in vehicle states and
+parameters and calculates the state derivatives for each of the states. You should implement all of the position and
+velocity states in the model for a total of 6 states. Do not use small angle assumptions.
+
+Niki is a front wheel drive vehicle. This means any positive longitudinal force (drive force) will be applied only at the front tires.
+If the longitudinal force is negative (braking force), it will be split evenly between the front and rear axles. You need to implement
+this behavior in your \verb!nonlinear_bicycle_model! function.
+
+When you are finished writing this function in \MOno{}, copy and paste your code in the corresponding \GRno{}
+prompt to validate your results. You can use the code in the "Code to Call Your Function" section of the \GRno{} prompt
+to debug and develop your code in \MOno{}.
+
+\iftoggle{solution}{
+    \input{Solutions/matlabgrader.tex}
+}
+
+\newpage

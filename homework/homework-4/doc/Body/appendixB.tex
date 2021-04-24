@@ -1,0 +1,42 @@
+\secApp{Tire Parameters}
+
+\subsection*{Linear Tire Model}
+
+\renewcommand{\arraystretch}{2}
+\begin{table}[h!]
+    \centering
+    \begin{tabular}{| l | c | c | l |}
+    \hline
+    \bld{Variable Name} & \bld{Value} & \bld{Units} & \bld{Description} \\[5pt]
+    \hline\hline
+    \verb$f_tire.ca_lin$  & 80,000 & \si{\N/\radian} & Front Cornering Stiffness \\ \hline
+    \hline
+    \verb$r_tire.ca_lin$ & 120,000 & \si{\N/\radian} & Rear Cornering Stiffness  \\ \hline
+    \end{tabular}
+    \caption{Linear Tire Model Parameters}
+    \label{Table:LinTire}
+\end{table}
+
+\vspace*{0.5cm}
+
+\subsection*{Fiala Tire Model}
+
+\begin{table}[h!]
+    \centering
+    \begin{tabular}{| l | c | c | l |}
+    \hline
+    \bld{Variable Name} & \bld{Value} & \bld{Units} & \bld{Description} \\[5pt]
+    \hline\hline
+    \verb$f_tire.cy$    & 110,000 & \si{\N/\radian} & Front Cornering Stiffness             \\\hline
+    \verb$f_tire.mu$    &    0.90 & Unitless        & Front Peak Coefficient of Friction    \\\hline
+    \verb$f_tire.mu_s$  &    0.90 & Unitless        & Front Sliding Coefficient of Friction \\\hline
+    \hline
+    \verb$r_tire.cy$    & 180,000 & \si{\N/\radian} & Rear Cornering Stiffness              \\\hline
+    \verb$r_tire.mu$    &    0.94 & Unitless        & Rear Peak Coefficient of Friction     \\\hline
+    \verb$r_tire.mu_s$  &    0.94 & Unitless        & Rear Sliding Coefficient of Friction  \\\hline
+    \end{tabular}
+    \caption{Fiala Tire Model Parameters}
+    \label{Table:FialaTire}
+\end{table}
+\renewcommand{\arraystretch}{1}
+\newpage

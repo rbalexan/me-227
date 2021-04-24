@@ -1,0 +1,70 @@
+%---------------------------------------------------------------------------------
+% QUESTION 3.E
+%---------------------------------------------------------------------------------
+\secMOGS{Adding Feedforward Control}
+
+Finally add feedforward control to your lookahead controller like we discussed in class. Your controller should now
+have the form
+
+\al{
+    \delta = -\frac{\Kla}{\Caf} \left(e + \xla \dpsi \right) + \delta_{ff}
+}
+
+where the feedforward term is
+
+\al{
+    \delta_{ff} = \frac{\Kla\xla}{\Caf}\dpsi_{ss} + \kappa \left(L + K U_x^2 \right)
+}
+
+and the steady-state yaw rate is
+
+\al{
+    \dpsi_{ss} &= \kappa \left( \frac{m a U_x^2}{L\Car} - b \right)
+}
+
+Using the same controller parameters as \qrefMOGS{Implementing Active Lane Assist and Cruise Control}, simulate the vehicle
+tracking the curved and gently undulating roads for 0 to 20 seconds.
+Start with initial conditions $e = 1$ m, $\dpsi = 0$ rad, $s = 0$ m, $r = 0$ rad/s, $U_y = 0$ m/s, and $U_x = 31$ m/s.
+
+Create plots of all six of our system states ($r$, $U_x$, $U_y$, $\dpsi$, $s$, and $e$), 
+for each simulation (curved and undulating roads), and submit them to gradescope.
+
+How large of an impact on tracking performance did the feedforward control have?
+
+
+\vspace*{0.5cm}
+
+\expect{Submit plots of all vehicle states for 2 different simulations. Describe the change in controller performance after adding feedforward
+    control.}
+
+\iftoggle{condensed}{
+    \vspace*{0.5cm}
+}{
+    \subsubsection*{Results:}
+}
+
+\iftoggle{solution}{
+    \input{Solutions/Problem3/problem3f.tex}
+    \newpage
+}
+
+\iftoggle{template}{
+    \begin{solutionorbox}[3.5in]
+    \end{solutionorbox}
+    \newpage
+}
+
+\iftoggle{student}{
+%---------------------------------------------------------------------------------
+% STUDENT: BEGIN WORK
+%---------------------------------------------------------------------------------
+
+
+% Please box final answer
+
+%---------------------------------------------------------------------------------
+% STUDENT: END WORK
+%---------------------------------------------------------------------------------
+    \newpage
+}
+

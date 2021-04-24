@@ -1,0 +1,403 @@
+
+% This is a borrowed LaTeX template file for lecture notes for CS267,
+% Applications of Parallel Computing, UCBerkeley EECS Department.
+% Now being used for CMU's 10725 Fall 2012 Optimization course
+% taught by Geoff Gordon and Ryan Tibshirani.  When preparing 
+% LaTeX notes for this class, please use this template.
+%
+% To familiarize yourself with this template, the body contains
+% some examples of its use.  Look them over.  Then you can
+% run LaTeX on this file.  After you have LaTeXed this file then
+% you can look over the result either by printing it out with
+% dvips or using xdvi. "pdflatex template.tex" should also work.
+
+\setlength{\oddsidemargin}{0 in}
+\setlength{\evensidemargin}{0 in}
+\setlength{\topmargin}{-0.6 in}
+\setlength{\textwidth}{6.5 in}
+\setlength{\textheight}{8.5 in}
+\setlength{\headsep}{0.75 in}
+\setlength{\parindent}{0 in}
+\setlength{\parskip}{0.1 in}
+\extrafootheight{-0.5in}
+
+% flags to display template, solution, or condensed versions
+% toggletrue{variable} or togglefalse{variable}
+% nothing stopping you from turning all 3 on and getting a 
+% super long document
+\newtoggle{template}
+\newtoggle{solution}
+\newtoggle{condensed}
+\newtoggle{student}
+
+\newcommand{\template}{
+    \toggletrue{template}
+    \togglefalse{solution}
+    \togglefalse{condensed}
+    \togglefalse{student}
+}
+
+\newcommand{\solutions}{
+    \toggletrue{solution}
+    \togglefalse{template}
+    \togglefalse{condensed}
+    \togglefalse{student}
+}
+
+\newcommand{\condensed}{
+    \toggletrue{condensed}
+    \togglefalse{template}
+    \togglefalse{solution}
+    \togglefalse{student}
+}
+
+\newcommand{\student}{
+    \toggletrue{student}
+    \togglefalse{template}
+    \togglefalse{solution}
+    \togglefalse{condensed}
+}
+
+%% For hw6
+%\newcommand*\circled[1]{\tikz[baseline=(char.base)]{
+%    \node[shape=circle,draw,inner sep=2pt] (char) {#1};}}
+%
+%% The following commands set up the lecnum (lecture number)
+%% counter and make various numbering schemes work relative
+%% to the lecture number.
+
+\newcounter{lecnum}
+
+%\renewcommand{\thepage}{\thelecnum.\arabic{page}}
+%\renewcommand{\thesection}{\thelecnum.\arabic{section}}
+\renewcommand{\thesubsection}{\arabic{section}.\Alph{subsection}}
+\renewcommand{\theequation}{\thelecnum.\arabic{equation}}
+\renewcommand{\thefigure}{\thelecnum.\arabic{figure}}
+\renewcommand{\thetable}{\thelecnum.\arabic{table}}
+
+%\newcommand{\cc}{{\circ}}
+%\newcommand{\Cf}{{\tilde{C}_{f\cc}}}
+%\newcommand{\Cr}{{\tilde{C}_{r\cc}}}
+%\newcommand{\Kpf}{{K_{\phi f}}}
+%\newcommand{\Kpr}{{K_{\phi r}}}
+%\newcommand{\Kp}{{K_{\phi}}}
+%\newcommand{\cs}{{c_\mathrm{sky}}}
+
+
+%
+% The following macro is used to generate the header.
+%
+\newcommand{\lecture}[4]{
+   \pagestyle{myheadings}
+   \thispagestyle{plain}
+   \newpage
+   \setcounter{lecnum}{#1}
+   \setcounter{page}{1}
+   \noindent
+   \begin{center}
+   \framebox{
+      \vbox{\vspace{2mm}
+    \hbox to 6.28in { {\bf ME227: Vehicle Dynamics and Control
+	\hfill Spring 2021} }
+       \vspace{4mm}
+       \hbox to 6.28in { {\Large \hfill Lecture #1: #2  \hfill} }
+       \vspace{2mm}
+       \hbox to 6.28in { {#3 \hfill \textcopyright #4 } }
+      \vspace{2mm}}
+   }
+   \end{center}
+   \markboth{Lecture #1: #2}{Lecture #1: #2}
+
+}
+
+\newcommand{\assignment}[4]{
+   \pagestyle{myheadings}
+   \thispagestyle{plain}
+   \newpage
+   \setcounter{lecnum}{#1}
+   \setcounter{page}{1}
+   \noindent
+   \begin{center}
+   \framebox{
+      \vbox{\vspace{2mm}
+    \hbox to 6.28in { {\bf ME227: Vehicle Dynamics and Control
+	\hfill Spring 2021} }
+       \vspace{4mm}
+       \hbox to 6.28in { {\Large \hfill Assignment #1: #2  \hfill} }
+       \vspace{2mm}
+       \hbox to 6.28in { {#3 \hfill \textcopyright #4 } }
+      \vspace{2mm}}
+   }
+   \end{center}
+   \markboth{Assignment #1: #2}{Assignment #1: #2}
+}
+
+\newcommand{\solutionME}[4]{
+   \pagestyle{myheadings}
+   \thispagestyle{plain}
+   \newpage
+   \setcounter{lecnum}{#1}
+   \setcounter{page}{1}
+   \noindent
+   \begin{center}
+   \framebox{
+      \vbox{\vspace{2mm}
+    \hbox to 6.28in { {\bf ME227: Vehicle Dynamics and Control
+	\hfill Spring 2017} }
+       \vspace{4mm}
+       \hbox to 6.28in { {\Large \hfill Solution #1: #2  \hfill} }
+       \vspace{2mm}
+       \hbox to 6.28in { {#3 \hfill \textcopyright #4 } }
+      \vspace{2mm}}
+   }
+   \end{center}
+   \markboth{Solution #1: #2}{Solution #1: #2}
+}
+
+\newcommand{\project}[4]{
+   \pagestyle{myheadings}
+   \thispagestyle{plain}
+   \newpage
+   \setcounter{lecnum}{#1}
+   \setcounter{page}{1}
+   \noindent
+   \begin{center}
+   \framebox{
+      \vbox{\vspace{2mm}
+    \hbox to 6.28in { {\bf ME227: Vehicle Dynamics and Control
+	\hfill Spring 2020} }
+       \vspace{4mm}
+       \hbox to 6.28in { {\Large \hfill Project: #2  \hfill} }
+       \vspace{2mm}
+       \hbox to 6.28in { {#3 \hfill \textcopyright #4 } }
+      \vspace{2mm}}
+   }
+   \end{center}
+   \markboth{Project: #2}{Project: #2}
+}
+
+%
+% Convention for citations is authors' initials followed by the year.
+% For example, to cite a paper by Leighton and Maggs you would type
+% \cite{LM89}, and to cite a paper by Strassen you would type \cite{S69}.
+% (To avoid bibliography problems, for now we redefine the \cite command.)
+% Also commands that create a suitable format for the reference list.
+\renewcommand{\cite}[1]{[#1]}
+\def\beginrefs{\begin{list}%
+        {[\arabic{equation}]}{\usecounter{equation}
+         \setlength{\leftmargin}{2.0truecm}\setlength{\labelsep}{0.4truecm}%
+         \setlength{\labelwidth}{1.6truecm}}}
+\def\endrefs{\end{list}}
+\def\bibentry#1{\item[\hbox{[#1]}]}
+
+%Use this command for a figure; it puts a figure in wherever you want it.
+%usage: \fig{NUMBER}{SPACE-IN-INCHES}{CAPTION}
+
+% Use these for theorems, lemmas, proofs, etc.
+\newtheorem{theorem}{Theorem}[lecnum]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{claim}[theorem]{Claim}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{definition}[theorem]{Definition}
+\newenvironment{proof}{{\bf Proof:}}{\hfill\rule{2mm}{2mm}}
+
+% **** IF YOU WANT TO DEFINE ADDITIONAL MACROS FOR YOURSELF, PUT THEM HERE:
+
+\newcommand\E{\mathbb{E}}
+
+\newcommand{\eX}{{\boldsymbol{\hat{e}_X}}}
+\newcommand{\eY}{{\boldsymbol{\hat{e}_Y}}}
+\newcommand{\eZ}{{\boldsymbol{\hat{e}_Z}}}
+\newcommand{\pVE}{{\psi_{VE}}}
+\newcommand{\pVEdot}{\dot{\psi}_{VE}}
+
+%\newcommand{\roa}{\uvec{r}_{oa}}
+
+% basis vector: arg1 is name
+\newcommand{\basvec}[1]{\boldsymbol{\hat{e}_{#1}}}
+
+% "radius" vector (position vector named r) from arg1 to arg2
+
+\renewcommand{\vec}[1]{%
+  \smash{\ensurestackMath{\stackengine{1pt}{#1}{\scriptscriptstyle\sim}{U}{c}{F}{F}{S}}}
+  \vphantom{#1}
+}
+\newcommand{\roa}{\vec{r}_{oa}}
+\newcommand{\rv}[3]{\vec{r}_{#1#2,#3}}
+
+
+% similar with velocity and acceleration vectors
+\newcommand{\vv}[3]{\vec{v}_{#1#2,#3}}
+\newcommand{\wv}[3]{\vec{\omega}_{#1#2,#3}}
+\newcommand{\av}[3]{\vec{a}_{#1#2,#3}}
+
+% vector derivatives
+\newcommand{\drv}[3]{\vec{\dot{r}}_{#1#2,#3}}
+\newcommand{\dvv}[3]{\vec{\dot{v}}_{#1#2,#3}}
+\newcommand{\dwv}[3]{\vec{\dot{\omega}}_{#1#2,#3}}
+
+% forces
+\newcommand{\F}[2]{\text{F}_\text{#1#2}}
+
+% cornering stiffnesses and slip angles
+\newcommand{\Caf}{C_{\alpha f}}
+\newcommand{\Car}{C_{\alpha r}}
+\newcommand{\af}{\alpha f}
+\newcommand{\ar}{\alpha r}
+
+% vehicle states and derivatives
+\newcommand{\Uxdot}{\dot{U}_x}
+\newcommand{\Uydot}{\dot{U}_y}
+\newcommand{\rdot}{\dot{r}}
+\newcommand{\dpsi}{\Delta\Psi}
+\newcommand{\dpsidot}{\Delta\dot{\Psi}}
+\newcommand{\edot}{\dot{e}}
+
+% Gains
+\newcommand{\Kla}{K_{la}}
+\newcommand{\xla}{x_{la}}
+
+% Commands for Gradescope and Grader
+\newcommand{\GS}{\textbf{Gradescope}}
+\newcommand{\GR}{\textbf{MATLAB Grader}}
+\newcommand{\MO}{\textbf{MATLAB Online}}
+\newcommand{\GSno}{Gradescope}
+\newcommand{\GRno}{MATLAB Grader}
+\newcommand{\MOno}{MATLAB Online}
+\newcommand{\M}{MATLAB}
+% Commands for numberless section headings while incrementing counter
+\newcommand{\secNoNum}[1]{\refstepcounter{section}\section*{#1}}
+\newcommand{\subsecNoNum}[1]{\refstepcounter{subsection}\subsection*{#1}}
+\newcommand{\ph}{Problem \thesection}
+\newcommand{\qh}{Question \thesection.\Alph{subsection}}
+\newcommand{\apph}{Appendix \Alph{section}}
+
+% Commands for questions subsection headings
+\newcommand{\secPr}[1]{%
+    \secNoNum{%
+        \ph{} -- #1
+    }
+    \label{sec:#1}
+}
+
+\newcommand{\secApp}[1]{%
+    \secNoNum{%
+        \apph{} -- #1
+    }
+    \label{appendix:#1}
+}
+
+\newcommand{\secGR}[1]{%
+    \subsecNoNum{%
+        \color{blue}
+        \qh{} -- #1 (\GRno{})
+    }
+    \label{subsecGR:#1}
+}
+
+\newcommand{\secMOGR}[1]{%
+    \subsecNoNum{%
+        \color{blue}
+        \qh{} -- #1 (\MOno{} / \GRno{})
+    }
+    \label{subsecMOGR:#1}
+}
+
+\newcommand{\secMOGS}[1]{%
+    \subsecNoNum{%
+        \qh{} -- #1 (\MOno{} / \GSno{})
+    }
+    \label{subsecMOGS:#1}
+}
+
+\newcommand{\secGS}[1]{%
+    \subsecNoNum{%
+        \qh{} -- #1 (\GSno{})
+    }
+    \label{subsecGS:#1}
+}
+
+% Reference other question subsections
+\newcommand{\qrefGR}[1]{%
+    \textbf{%
+        Question \ref{subsecGR:#1}%
+    }%
+}
+
+\newcommand{\qrefGS}[1]{%
+    \textbf{%
+        Question \ref{subsecGS:#1}%
+    }%
+}
+
+\newcommand{\qrefMOGR}[1]{%
+    \textbf{%
+        Question \ref{subsecMOGR:#1}%
+    }%
+}
+
+\newcommand{\qrefMOGS}[1]{%
+    \textbf{%
+        Question \ref{subsecMOGS:#1}%
+    }%
+}
+
+\newcommand{\pref}[1]{%
+    \textbf{%
+        Problem \ref{sec:#1}%
+    }%
+}
+
+
+% Shortcut for equation
+\newcommand{\eq}[1]{%
+    \begin{equation*}
+        #1
+    \end{equation*}
+}
+
+% Shortcut for align
+\newcommand{\al}[1]{%
+    \begin{align*}
+        #1
+    \end{align*}
+}
+
+% Shortcut for problem expectation
+\newcommand{\expect}[1]{%
+    \textbf{%
+        \textit{%
+            #1%
+        }%
+    }%
+}
+
+% Shortcut for bold
+\newcommand{\bld}[1]{\textbf{#1}}
+
+% Change solution title
+\renewcommand{\solutiontitle}{\noindent\enspace}
+
+% Matlab code helper macros
+\newcommand{\matin}[1]{\lstinline[style=Matlab-editor]{#1}}
+\newcommand{\matld}[1]{\lstinputlisting[style=Matlab-editor, basicstyle=\footnotesize]{#1}}
+
+% Remove question numbers
+\qformat{}
+\renewcommand{\questionshook}{%
+\setlength{\leftmargin}{0pt}%
+\setlength{\labelwidth}{-\labelsep}%
+}
+
+% Fix duplicate question labeling
+\makeatletter
+\xpatchcmd{\questions}
+  {question@\arabic{question}}
+  {question@\arabic{page}@\arabic{question}}
+  {}{}
+\makeatother
+
+% Shortcut for underline and bold
+\newcommand{\ubf}[1]{\underline{\textbf{#1}}}
+

@@ -1,0 +1,50 @@
+%---------------------------------------------------------------------------------
+% QUESTION 3.E
+%---------------------------------------------------------------------------------
+\secMOGS{Lane Keeping on a Highway}
+
+Using the same controller parameters as \qrefMOGS{Implementing Active Lane Assist and Cruise Control}, simulate the vehicle
+tracking a 980 m radius curve from 0 to 20 seconds, and then with the gently undulating highway for the same amount of time.
+Start with initial conditions $e = 1$ m, $\dpsi = 0$ rad, $s = 0$ m, $r = 0$ rad/s, $U_y = 0$ m/s, and $U_x = 31 m/s$.
+
+While this road curvature may seem very low, we'll discuss highway design in a future lecture and find that this is a possible value.
+
+Create plots of all six of our system states ($r$, $U_x$, $U_y$, $\dpsi$, $s$, and $e$), 
+for each simulation (curved and undulating roads), and submit them to gradescope.
+
+Is this controller able to track the lane effectively without driver intervention in both lane configurations?  Explain your conclusion.
+
+
+\vspace*{0.5cm}
+
+\expect{Submit plots of all vehicle states for 2 different simulations. Is this controller able to track the lane effectively without driver intervention in both lane configurations?  Explain your conclusion.}
+
+\iftoggle{condensed}{
+    \vspace*{0.5cm}
+}{
+    \subsubsection*{Results:}
+}
+
+\iftoggle{solution}{
+    \input{Solutions/Problem3/problem3e.tex}
+}
+
+\iftoggle{template}{
+    \begin{solutionorbox}[3.5in]
+    \end{solutionorbox}
+}
+
+\iftoggle{student}{
+%---------------------------------------------------------------------------------
+% STUDENT: BEGIN WORK
+%---------------------------------------------------------------------------------
+
+
+% Please box final answer
+
+%---------------------------------------------------------------------------------
+% STUDENT: END WORK
+%---------------------------------------------------------------------------------
+}
+
+\newpage

@@ -1,0 +1,33 @@
+%---------------------------------------------------------------------------------
+% QUESTION 2.D
+%---------------------------------------------------------------------------------
+\secGR{Simulating an Oversteering Vehicle}
+
+Let's see how well the predictions from \qrefGS{Oversteering Vehicle Pole Position Analysis} match the system's simulated
+response
+
+Follow the prompts in \GRno{} to create a script to simulate the system response of the oversteering vehicle.
+Keep $U_x$ at 30 \si{\m/\s} and $\Kla$ at 3,500 \si{\N/\m}. Set the lookahead distance $\xla$ to 25 \si{\m}. 
+Simulate the system response for 10 seconds. 
+Plot the lateral error and heading error on separate plots as a function of time.
+Begin with an initial error of 1 \si{\m}, the vehicle pointing straight along the path, and with $\edot=0$ and $\dpsidot = 0$.
+
+Because we're interested in both lateral error and heading error in this problem, we need to change the output matrix
+$C$ slightly, relative to \pref{Understanding the Lookahead Controller}. To get both of these quantities, we'll use:
+
+\al{
+    C &=
+    \begin{bmatrix}
+        1 & 0 & 0 & 0 \\
+        0 & 0 & 1 & 0
+    \end{bmatrix}
+}
+
+in our state-space object.
+
+\vspace*{0.5cm}
+
+\iftoggle{solution}{
+    \input{Solutions/matlabgrader.tex}
+}
+

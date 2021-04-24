@@ -1,0 +1,33 @@
+\secPr{Building a Nonlinear Simulation}
+In previous homeworks, we have built up a simulator in \GRno{} based on the vehicle and tire models we have covered in
+class. \textbf{This week we're going to expand on this simulator in MATLAB, rather than MATLAB Grader}. For these exercises and for the project, you can either use MATLAB Online (https://matlab.mathworks.com/) or MATLAB.  \textbf{The teaching team believes there are benefits to downloading MATLAB to your computer, though all assignments and the project can be completed using MATLAB Online.}  
+
+\textbf{Stanford has made MATLAB and related MATHWORKS products available to all students at no charge}. To download MATLAB, go to the following site and make an account using your Stanford email address.  This will permit you to download and install MATLAB.
+\center
+\url{http://www.mathworks.com/}
+\flushleft
+If you choose to install MATLAB, MATLAB Installer will ask you which toolboxes you'd like to install.  In the appendix of this assignment, you will find a list of required toolboxes from the teaching team along with addition useful information about the software.  While you may install all toolboxes, you will find that the program files becomes extremely large if you decide to install all toolboxes.
+
+Once you complete this
+problem, you will have a great testing and development tool for your project in the comings weeks.
+
+To begin, we'll provide you with tested versions of the functions you've already written \verb!Fy_fiala! and
+\verb!slip_angles!, and \verb!integrate_euler!. We will also provide you with a script to generate the vehicle
+parameters struct that you've used in previous homeworks, and some templates for the functions you need to implement.
+You'll find these on Canvas in the zip file \verb!HW4_P3.zip!. If using \MOno{}, you can upload this zip file directly to \MOno{} and
+extract it there.
+
+For the entirety of this problem, we're going to build up the most general simulator we can, meaning we're going to
+enforce fewer assumptions than we have previously. You should not use small angle assumptions, constant speed
+assumptions, or straight road/constant radius assumptions in these problems. Implement the full equations of motion.
+The functions provided to you are written with this standard in mind.
+
+The first three problems will walk you through implementing the new pieces of the simulator. We have created \GRno{}
+prompts to
+go along with these problems to help you check if you have implemented each function correctly. We have left the answer
+template blank, so you can copy and paste your code directly from \MOno{} into \GRno{}.
+
+The next three problems will walk you through implementing a lookahead and speed controller and testing it in different
+simulation environments.
+
+\vspace*{1cm}
