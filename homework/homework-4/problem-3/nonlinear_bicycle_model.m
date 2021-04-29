@@ -29,9 +29,11 @@ function [Ux_dot, Uy_dot, r_dot, s_dot, e_dot, dpsi_dot] =...
 %--------------------------------------------------------------------------
 %%% STUDENT CODE HERE
 if (Fx < 0)
-    
+    F_xf = Fx/2;
+    F_xr = Fx/2;
 else
-    
+    F_xf = Fx;
+    F_xr = 0;
 end
 %%% END STUDENT CODE
 
@@ -40,14 +42,23 @@ end
 %% CALCULATE VELOCITY STATE DERIVATIVES
 %--------------------------------------------------------------------------
 %%% STUDENT CODE HERE
+m  = veh.m;
+Iz = veh.Iz;
+a  = veh.a;
+b  = veh.b;
 
+Ux_dot =  r*Uy + 1/m*(F_xr + F_xf*cos(delta) - F_yf*sin(delta));
+Uy_dot = -r*Ux + 1/m*(F_yr + F_xf*sin(delta) + F_yf*cos(delta));
+r_dot  =  1/Iz*(a*F_yf*cos(delta) + a*F_xf*cos(delta) - b*F_yr);
 %%% END STUDENT CODE
 
 %--------------------------------------------------------------------------
 %% CALCULATE POSITION STATE DERIVATIVES
 %--------------------------------------------------------------------------
 %%% STUDENT CODE HERE
-
+s_dot    = 1/(1 - e*kappa)*(Ux*cos(dpsi) - Uy*sin(dpsi));
+e_dot    = Uy*cos(dpsi) + Ux*sin(dpsi);
+dpsi_dot = r - kappa*s_dot; 
 %%% END STUDENT CODE
 
 

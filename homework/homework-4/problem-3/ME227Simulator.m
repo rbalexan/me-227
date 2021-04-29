@@ -4,7 +4,7 @@
 % ME227 Spr 2020
 % Nonlinear Vehicle Simulation
 
-% clear; clc; close all
+clear; clc; close all
 
 %--------------------------------------------------------------------------
 %% CONSTANTS AND PARAMS
@@ -16,30 +16,30 @@ setup_niki;
 % Create time vector (!!Do not change these variable names - store
 % your results in these variables!!)
 dt = 0.001;
-t_ = ??:dt:??;
+t_ = 0:dt:20;
 lenT = length(t_);
 
 % Set control gains
-gains.K_la = ??;
-gains.x_la = ??;
-gains.K_long = ??;
+gains.K_la = 1750;
+gains.x_la = 20;
+gains.K_long = veh.m*(0.05*g)/(1);
 
 % Select lookahead controller mode
 % control_mode = 1; % Feedback only
-% control_mode = 2; % Feedforward + Feedback
+control_mode = 2; % Feedforward + Feedback
 
 % Select path (Uncomment one of these paths and comment the others)
 % straight  path
-s = [0     750];
-k = [0     0];
+% s = [0     750];
+% k = [0     0];
 
 % constant radius  path
 % s = [0      750];
 % k = [1/980   1/980];
 
 % "undulating" path
-% s = [0      250      500   750];
-% k = [1/980   -1/980   0    0];
+s = [0      250      500   750];
+k = [1/980   -1/980   0    0];
 %%% END STUDENT CODE
 
 %--------------------------------------------------------------------------
@@ -53,14 +53,14 @@ path = integrate_path(s, k, init);
 
 % Allocate space for results (!!Do not change these variable names - store
 % your results in these variables!!)
-s_ = zeros(1,lenT);
-e_ = zeros(1,lenT);
-dpsi_ = zeros(1,lenT);
-r_ = zeros(1,lenT);
-Ux_ = zeros(1,lenT);
-Uy_ = zeros(1,lenT);
+s_     = zeros(1,lenT);
+e_     = zeros(1,lenT);
+dpsi_  = zeros(1,lenT);
+r_     = zeros(1,lenT);
+Ux_    = zeros(1,lenT);
+Uy_    = zeros(1,lenT);
 delta_ = zeros(1,lenT);
-Fx_ = zeros(1,lenT);
+Fx_    = zeros(1,lenT);
 
 %--------------------------------------------------------------------------
 %% SET SPEED PROFILE
@@ -69,19 +69,19 @@ Fx_ = zeros(1,lenT);
 % your results in these variables!!)
 
 %%% STUDENT CODE HERE
-path.UxDes = ??*ones(size(path.s));
+path.UxDes = 31*ones(size(path.s));
 %%% END STUDENT CODE
 
 %--------------------------------------------------------------------------
 %% SET INITIAL CONDITIONS
 %--------------------------------------------------------------------------
 %%% STUDENT CODE HERE
-s_(1) = 0;
-e_(1) = 0;
+s_(1)    = 0;
+e_(1)    = 1;
 dpsi_(1) = 0;
-r_(1) = 0;
-Ux_(1) = 0;
-Uy_(1) = 0;
+r_(1)    = 0;
+Ux_(1)   = 31;
+Uy_(1)   = 0;
 %%% END STUDENT CODE
 
 %--------------------------------------------------------------------------
@@ -96,9 +96,14 @@ for i = 1:lenT-1
     %%% STUDENT CODE HERE
 
     % Calculate actuator commands
+    [delta_(i), Fx_(i)] = ...
+        me227_controller(s_(i), e_(i), dpsi_(i), Ux_(i), Uy_(i), r_(i), ...
+        gains, control_mode, path);
     
     % Take simulation step
-    
+    [Ux_(i+1), Uy_(i+1), r_(i+1), s_(i+1), e_(i+1), dpsi_(i+1)] = ...
+        simulate_step(Ux_(i), Uy_(i), r_(i), s_(i), e_(i), dpsi_(i), ...
+                      delta_(i), Fx_(i), kappa, dt, veh, f_tire, r_tire);
     %%% END STUDENT CODE
 end
 
@@ -171,4 +176,4 @@ ylabel('Total Longitudinal Force [Fx]')
 %--------------------------------------------------------------------------
 %% ANIMATE VEHICLE
 %--------------------------------------------------------------------------
-% animate(path, veh, dpsi_, s_, e_, delta_)
+animate(path, veh, dpsi_, s_, e_, delta_)

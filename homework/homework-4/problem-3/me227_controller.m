@@ -47,7 +47,7 @@ r_tire.mu     = 0.94;
 %--------------------------------------------------------------------------
 %%% STUDENT CODE HERE
 % Calculate the understeer gradient for Niki
-K_radpmps2 = ??; % [rad/m/s^2]
+K_radpmps2 = (veh.Wf/f_tire.Ca_lin - veh.Wr/r_tire.Ca_lin)*1/g; % [rad/m/s^2]
 %%% END STUDENT CODE
 
 %--------------------------------------------------------------------------
@@ -55,8 +55,8 @@ K_radpmps2 = ??; % [rad/m/s^2]
 %--------------------------------------------------------------------------
 % !! Do not change the code in this block - change the desired gains in
 % your simulator script!!
-K_la = gains.K_la;
-x_la = gains.x_la;
+K_la   = gains.K_la;
+x_la   = gains.x_la;
 K_long = gains.K_long;
 
 %--------------------------------------------------------------------------
@@ -67,22 +67,26 @@ K_long = gains.K_long;
 Ux_des = interp1(path.s, path.UxDes, s);
 
 %Find Curvature for the current distance along the path via interpolation
-kappa = interp1(path.s, path.k, s);
+kappa  = interp1(path.s, path.k, s);
 
 %--------------------------------------------------------------------------
 %% Lateral Control Law
 %--------------------------------------------------------------------------
 %%% STUDENT CODE HERE
-%Use the Lateral Control Law to Caclulate Delta
+%Use the Lateral Control Law to Calculate Delta
 if control_mode == 1
     %%% STUDENT CODE HERE
     % Feedback only
-
+    delta_la = -K_la/f_tire.Ca_lin * (e + x_la*dpsi);
+    delta    = delta_la;
     %%% END STUDENT CODE
 else
     %%% STUDENT CODE HERE
     % Feedback + feedforward
-
+    delta_la = -K_la/f_tire.Ca_lin * (e + x_la*dpsi);
+    dpsi_ss  = kappa*(veh.m*veh.a*Ux^2/(veh.L*r_tire.Ca_lin) - veh.b);
+    delta_ff = kappa*(veh.L + K_radpmps2*Ux^2) + K_la*x_la/f_tire.Ca_lin*dpsi_ss;
+    delta    = delta_la + delta_ff;
     %%% END STUDENT CODE
 end
 
@@ -91,6 +95,6 @@ end
 %--------------------------------------------------------------------------
 %%% STUDENT CODE HERE
 %Use the Longitudinal Control Law to Cacluate Fx
-
+Fx = K_long*(Ux_des - Ux);
 %%% END STUDENT CODE
 end
