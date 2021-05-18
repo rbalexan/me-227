@@ -1,0 +1,55 @@
+%---------------------------------------------------------------------------------
+% QUESTION 2.D
+%---------------------------------------------------------------------------------
+\secGS{Drifting Intuition}
+
+In problem 2.E, you will implement a longitudinal and lateral controller to stabilize Marty in a drift.  Let's think briefly about the forces at play while drifting in this problem.  In the case of a left-handed drift (e.g. yawrate is positive), you, the driver, have stabilized the vehicle with a negative steering wheel angle.  In each "Observed Behavior" listed in the table, select the correct input to stabilize the vehicle.  When $\delta$ is held constant, select the correct $F_x$ trend to stabilize the vehicle.  When $F_x$ is held constant, select the correct steering input trend to stabilize the vehicle.  Provide an explanation for the input you selected.
+
+\expect{Circle the correct $\delta$ and $F_x$ inputs where applicable.  Provide an explanation for your choice.}
+
+
+\begin{center}
+ \begin{tabular}{|| m{2.1cm} | m{5.5cm} | m{2.5cm} | m{5cm} ||} 
+ \hline
+ Observed Behavior & $\delta$ & $F_x$ & Explanation\\ [0.5ex] 
+ \hline\hline
+ $r$ too large & \textbf{more negative} /  \textbf{less negative} & constant &\\& & &\\ 
+ \hline
+ $r$ too large & constant & \textbf{increase $F_x$} / \textbf{decrease $F_x$} &\\
+ \hline
+ $|U_y|$ too large & \textbf{more negative} / \textbf{less negative} & constant &\\& & &\\
+ \hline
+ $|U_y|$ too large & constant & \textbf{increase $F_x$} / \textbf{decrease $F_x$} &\\
+ \hline
+\end{tabular}
+\end{center}
+
+\iftoggle{condensed}{
+    \vspace*{0.5cm}
+}{
+    \subsubsection*{Solution:}
+}
+
+\iftoggle{solution}{
+    \input{Solutions/Problem2/problem2d.tex}
+}
+
+\iftoggle{template}{
+    \begin{solutionorbox}[5in]
+    \end{solutionorbox}
+    
+    \newpage
+}
+
+\iftoggle{student}{
+%---------------------------------------------------------------------------------
+% STUDENT: BEGIN WORK
+%---------------------------------------------------------------------------------
+% Please box final answer
+
+%---------------------------------------------------------------------------------
+% STUDENT: END WORK
+%---------------------------------------------------------------------------------
+\newpage
+}
+

@@ -1,0 +1,29 @@
+\secPr{Phase Portraits}
+
+In this problem, we will look at phase portraits of Marty generated using PPLANE, a MATLAB plotting tool for phase plane analysis. There are code and instructions zipped up on Canvas. You will run the script called \verb|pplane2017.m|. You can either run PPLANE locally or in MATLAB Online.
+
+Parameters you will need for Marty are given in the table below:
+
+\begin{table}[h]
+    \centering
+    \begin{tabular}{c|c|c|c}
+        Parameter & Value & Units & Meaning \\
+        \hline
+        $m$ & 1450 & kg & Mass\\
+        $C_{\alpha f}$ & 60,000 & N/rad & Front cornering stiffness (lumped)\\
+        $C_{\alpha r}$ & 160,000 & N/rad & Rear cornering stiffness (lumped)\\
+        $\mu$ & 1.1 && Front/rear tire-road friction coefficient\\
+        $L$ & 2.4 & m & Wheelbase\\
+        $I_z$ & 2300 & kg m$^2$ & Yaw inertia\\
+        $W_f$ & 0.33 & & Static front axle weight fraction
+    \end{tabular}
+    \caption{Marty Parameters}
+    \label{tab:marty}
+\end{table}
+
+\iftoggle{condensed}{
+    \vspace*{0.5cm}
+}{
+    \newpage
+}
+

@@ -1,0 +1,42 @@
+%---------------------------------------------------------------------------------
+% QUESTION 2.E
+%---------------------------------------------------------------------------------
+\secGS{Controlled Drifting}
+
+To sustain the drift let’s add feedback terms to the values of $\delta$ and $F_{xr}$. Use a simple longitudinal controlled to track the desired longitudinal speed:
+$$F_{xr}=K_x(U_{X,\text{des}}-U_x)+F_{x,ff}$$
+Where $K_x$ = 2,000 N/(m/s), $U_{x,\text{des}}$ = 8 m/s, and $F_{x,ff}$ is the value you found in Problem 2B. For the feedback steering, using proportional control on $U_y$ and $r$:
+$$\delta=k_r(r_{\text{des}}-r)+k_y(U_{y,\text{des}}-U_y)+\delta_{ff}$$
+The absolute value $k_r$ = 1 s. The absolute value of $k_y$ = 0.5 rad/(m/s), and $\delta_{ff}$ = -10°. Based on your observations in Problem 2.D, select the sign for $k_r$ and $k_y$.  Simulate for 9 seconds using the drift equilibrium as the initial condition. Plot $U_y$, $r$, and $U_x$ and visualize the animation. Are we drifting now?  What is the steady state sideslip angle?
+
+\expect{Plot of the states with an explanation of whether we are drifting and why. A calculation for the steady state sideslip angle.}
+
+\iftoggle{condensed}{
+    \vspace*{0.5cm}
+}{
+    \subsubsection*{Solution:}
+}
+
+\iftoggle{solution}{
+    \input{Solutions/Problem2/problem2e.tex}
+}
+
+\iftoggle{template}{
+    \begin{solutionorbox}[5in]
+    \end{solutionorbox}
+    
+    \newpage
+}
+
+\iftoggle{student}{
+%---------------------------------------------------------------------------------
+% STUDENT: BEGIN WORK
+%---------------------------------------------------------------------------------
+% Please box final answer
+
+%---------------------------------------------------------------------------------
+% STUDENT: END WORK
+%---------------------------------------------------------------------------------
+\newpage
+}
+
