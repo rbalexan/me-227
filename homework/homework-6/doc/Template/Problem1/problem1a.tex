@@ -1,0 +1,92 @@
+%---------------------------------------------------------------------------------
+% QUESTION 1.A
+%---------------------------------------------------------------------------------
+\secGR{Linearization of our Velocity Dynamics}
+
+
+Up until now, we have linearized our dynamics via linear \textit{assumptions}, such as small angle approximations and linear tires. We will now directly linearize our dynamics (which allows analysis and control of cool vehicle behavior such as drifting). 
+
+Consider just our velocity states, so $x = [r, U_y]^T$. We can write our dynamics as being a nonlinear function of our state and steering input (forget $F_{xr}$ for now - assume we are using the same longitudinal controller from HW5):
+$$ \dot{x} = f(x,\delta)$$
+We can linearize the dynamics and write our system as: 
+$$\dot{x} = f(x_{eq}) + A(x-x_{eq}) + B(\delta-\delta_{eq})= A(x-x_{eq}) + B(\delta-\delta_{eq})$$
+$$ \dot{\bar{x}} = A\bar{x} + B\bar{\delta} $$
+
+
+\begin{equation}
+A = 
+\begin{bmatrix}
+\frac{\partial \dot r}{\partial r}  & \frac{\partial \dot r}{\partial U_y} \\
+\frac{\partial \dot U_y}{\partial r}  & \frac{\partial \dot U_y}{\partial U_y}\\
+\end{bmatrix}_{x=x_{eq}} 
+\end{equation}
+
+\begin{equation}
+B = \begin{bmatrix}
+\frac{\partial \dot r}{\partial \delta} \\
+\frac{\partial \dot U_y}{\partial \delta}\\
+\end{bmatrix}_{x=x_{eq}} 
+\end{equation}
+
+To calculate the partial derivatives, we need to carefully consider what each term in our dynamics is a function of. Based on the Fiala lateral tire model:
+$$F_{yf} = f(\alpha_f)=f(U_y, r, \delta)$$
+Generally while drifting, $\alpha_r > \alpha_{sl}$ so:
+$$F_{yr} = f(F_{xr})$$
+
+So to calculate the first entry in the A matrix:
+$$ \frac{\partial \dot r}{\partial r} \biggr\rvert_{x=x_{eq}} = \frac{1}{I_z}(a\frac{\partial F_{yf}}{\partial r}cos(\delta)-b\frac{\partial F_{yr}}{\partial r}) \biggr\rvert_{x=x_{eq}} = \frac{acos(\delta)}{I_z}\frac{\partial F_{yf}}{\partial r} \biggr\rvert_{x=x_{eq}}$$
+
+To calculate $\frac{\partial F_{yf}}{\partial r}$, we then need to take the derivative of each term in the Fiala model with respect to $r$. The rest of the derivatives can be computed similarly.
+
+For this two state model we have computed the A \& B matrices for you (so you won't need to take the derivative of the Fiala model). However, make sure you understand how one could compute each term in A \& B, as you will be finding some of the derivatives in the next problem.
+
+
+\begin{equation}
+A = \begin{bmatrix} 
+-1.1963 & -0.744 \\
+-11.5025 & -0.7339\\
+\end{bmatrix}
+\end{equation}
+\begin{equation}
+B = \begin{bmatrix} 
+13.1451\\
+12.967\\
+\end{bmatrix}
+\end{equation}
+
+Finally, lets use the control law $\bar{\delta} = -K\bar{x}$ (full state feedback).
+
+\textbf{Find the gain vector K that puts the poles of the closed loop system at -4 and -8. Compute this by hand and show your work. Submit your gain vector to MATLAB Grader.}
+
+
+
+
+\iftoggle{condensed}{
+    \vspace*{0.5cm}
+}{
+    \subsubsection*{Solution:}
+}
+
+\iftoggle{solution}{
+    \input{Solutions/Problem1/problem1a.tex}
+}
+
+\iftoggle{template}{
+    \begin{solutionorbox}[5in]
+    \end{solutionorbox}
+    
+    \newpage
+}
+
+\iftoggle{student}{
+%---------------------------------------------------------------------------------
+% STUDENT: BEGIN WORK
+%---------------------------------------------------------------------------------
+% Please box final answer
+
+%---------------------------------------------------------------------------------
+% STUDENT: END WORK
+%---------------------------------------------------------------------------------
+\newpage
+}
+

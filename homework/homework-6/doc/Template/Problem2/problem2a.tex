@@ -1,0 +1,44 @@
+%---------------------------------------------------------------------------------
+% QUESTION 2.A
+%---------------------------------------------------------------------------------
+\secGS{Reflection of Lookahead Controller}
+
+We'll start with a reflection on your lookahead controller. Let's take a look at your code and make sure that everything was actually implemented correctly. A couple of teams had some implementation issues so, if your results seemed strange, check again that your code was written correctly. 
+
+Next, consider whether you think the amount of feedback and feedforward was appropriate. Feedforward enables you to lower feedback gains by adjusting the steering to the value you expect you need for a turn. It can, however, lead to errors if the feedforward steering is not exact (which is very possible if there is even a slight misalignment of the steering). Feedback – particularly proportional feedback – reduces the steady-state error but also makes the system response faster, potentially amplifying noise or the effects of delay. 
+
+
+\textbf{(1) Was everything implemented correctly? If not, what implementation challenges did your team run into?}
+
+\textbf{(2) Did each of your controllers effectively use feedback and feedforward? Support your conclusion with plots of your performance.}
+
+
+
+\iftoggle{condensed}{
+    \vspace*{0.5cm}
+}{
+    \subsubsection*{Solution:}
+}
+
+\iftoggle{solution}{
+    %\input{Solutions/Problem1/problem1a.tex}
+}
+
+\iftoggle{template}{
+    \begin{solutionorbox}[5in]
+    \end{solutionorbox}
+    
+    \newpage
+}
+
+\iftoggle{student}{
+%---------------------------------------------------------------------------------
+% STUDENT: BEGIN WORK
+%---------------------------------------------------------------------------------
+% Please box final answer
+
+%---------------------------------------------------------------------------------
+% STUDENT: END WORK
+%---------------------------------------------------------------------------------
+\newpage
+}

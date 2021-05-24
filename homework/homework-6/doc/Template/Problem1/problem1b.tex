@@ -1,0 +1,71 @@
+%---------------------------------------------------------------------------------
+% QUESTION 1.B
+%---------------------------------------------------------------------------------
+
+\secGR{Incorporating Path Tracking}
+
+Drifting by itself is pretty cool, but what if we wanted to incorporate a reference path? Let's define a new state $x = [r, U_y, e, \Delta\psi]^T$.
+
+%Since we have seen a lot of success with the lookahead controller, let's try adding an additional term to our steering command from Problem 2E:
+%$$\delta=k_r(r_{\text{des}}-r)+k_y(U_{y,\text{des}}-U_y)+\delta_{ff}+\delta_{lookahead}$$
+%where $\delta_{lookahead}$ is the lookahead controller we have been using all quarter (do not include curvature compensation).
+
+\textbf{Find a value for $\Delta \psi_{eq}$ given the drift equilibrium we are using in this problem. Do not make any small angle assumptions.}
+
+Let's linearize these dynamics as before and then try to find gains that stabilize the system. This time, our linearized matrices are:
+
+\begin{equation}
+A = 
+\begin{bmatrix}
+\frac{\partial \dot r}{\partial r}  & \frac{\partial \dot r}{\partial U_y}  & \frac{\partial \dot r}{\partial e} & \frac{\partial \dot r}{\partial \Delta\psi} \\
+\frac{\partial \dot U_y}{\partial r}  & \frac{\partial \dot U_y}{\partial U_y}  & \frac{\partial \dot U_y}{\partial e} & \frac{\partial \dot U_y}{\partial \Delta\psi} \\
+\frac{\partial \dot e}{\partial r}  & \frac{\partial \dot e}{\partial U_y}  & \frac{\partial \dot e}{\partial e} & \frac{\partial \dot e}{\partial \Delta\psi} \\
+\frac{\partial \dot{\Delta\psi}}{\partial r}  & \frac{\partial \dot{\Delta\psi}}{\partial U_y}  & \frac{\partial \dot{\Delta\psi}}{\partial e} & \frac{\partial \dot{\Delta\psi}}{\partial \Delta\psi} \\
+\end{bmatrix}_{x=x_{eq}} 
+\end{equation}
+
+\begin{equation}
+B = \begin{bmatrix}
+\frac{\partial \dot r}{\partial \delta} \\
+\frac{\partial \dot U_y}{\partial \delta}\\
+\frac{\partial \dot e}{\partial \delta} \\
+\frac{\partial \dot \Delta\psi}{\partial \delta}\\
+\end{bmatrix}_{x=x_{eq}} 
+\end{equation}
+
+
+\textbf{Find $\Delta{\psi_{ss}}$ and the new linearized dynamics matrices. Using full state feedback as before, place the poles at [-4 +/- 4.5j, -0.15 +/- 0.75j]. You are encouraged to use the 'place' function in MATLAB. Report your gain vector and $\Delta{\psi_{ss}}$ on MATLAB Grader}
+
+
+
+
+
+\iftoggle{condensed}{
+    \vspace*{0.5cm}
+}{
+    \subsubsection*{Solution:}
+}
+
+\iftoggle{solution}{
+    \input{Solutions/Problem1/problem1b.tex}
+}
+
+\iftoggle{template}{
+    \begin{solutionorbox}[5in]
+    \end{solutionorbox}
+    
+    \newpage
+}
+
+\iftoggle{student}{
+%---------------------------------------------------------------------------------
+% STUDENT: BEGIN WORK
+%---------------------------------------------------------------------------------
+% Please box final answer
+
+%---------------------------------------------------------------------------------
+% STUDENT: END WORK
+%---------------------------------------------------------------------------------
+\newpage
+}
+

@@ -1,0 +1,120 @@
+%---------------------------------------------------------------------------------
+% HEADER
+%---------------------------------------------------------------------------------
+% Stanford - ME227 Spring 2021
+% Instructor: Chris Gerdes
+% TA's: Trey Weber, Lucio Mondavi, Will Harvey, Alaisha Alexander
+%
+% This is a borrowed LaTeX template file for lecture notes for CS267,
+% Applications of Parallel Computing, UCBerkeley EECS Department.
+%
+% PLEASE MODIFY THIS TEMPLATE ONLY WHERE MARKED WITH "STUDENT:"
+%
+% The only parts that need to be modified in this document
+% are found in each of the invididual prompt files which are found in problem folders (e.g. Problem1/problem1a.tex). 
+%
+
+
+\documentclass[10pt]{exam}
+
+%--------=-------------------------------------------------------------------------
+% ADD PACKAGES
+%---------------------------------------------------------------------------------
+% Built in packages
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage[title]{appendix}
+\usepackage{empheq}
+\usepackage{fmtcount}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage[numbered,framed]{matlab-prettifier}
+\usepackage{minibox}
+\usepackage{siunitx}
+\usepackage{stackengine}
+\usepackage{xcolor}
+\usepackage{xpatch}
+
+% set up hyper link colors
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    filecolor=magenta,      
+    urlcolor=cyan,
+}
+
+%Disable all warnings issued by latex starting with "You have..."
+\usepackage{silence}
+\WarningFilter{latex}{You have requested package}
+
+% Custom packages
+\usepackage{Utility/undertilde}
+
+% Custom functions and macros
+\input{Utility/utils.tex}
+
+% Select mode (select only one at a time)
+%\template
+\condensed
+%\solutions
+%\student
+
+%---------------------------------------------------------------------------------
+% BEGIN DOCUMENT & INTRO
+%---------------------------------------------------------------------------------
+\begin{document}
+\input{Body/intro.tex}
+
+%---------------------------------------------------------------------------------
+% PROBLEM 1
+%---------------------------------------------------------------------------------
+% Problem Intro
+\input{Template/Problem1/p1Intro.tex}
+
+% Student Prompts and Responses
+\input{Template/Problem1/problem1a.tex}
+\input{Template/Problem1/problem1b.tex}
+\input{Template/Problem1/problem1c.tex}
+
+\newpage
+
+%---------------------------------------------------------------------------------
+% PROBLEM 2
+%---------------------------------------------------------------------------------
+% Problem Intro
+\input{Template/Problem2/p2Intro.tex}
+
+% Student Prompts and Responses
+\input{Template/Problem2/problem2a.tex}
+\input{Template/Problem2/problem2b.tex}
+\input{Template/Problem2/problem2c.tex}
+%\input{Template/Problem2/problem2d.tex}
+%\input{Template/Problem2/problem2e.tex}
+\newpage
+
+%---------------------------------------------------------------------------------
+% PROBLEM 3
+%---------------------------------------------------------------------------------
+% Problem Intro
+%\input{Template/Problem3/p3Intro.tex}
+
+% Student Prompts and Responses
+%\input{Template/Problem3/problem3a_new.tex}
+%input{Template/Problem3/problem3b.tex}
+%\input{Template/Problem3/problem3c.tex}
+%\newpage
+%---------------------------------------------------------------------------------
+% REMARKS
+%---------------------------------------------------------------------------------
+\iftoggle{solution}{
+    \input{Solutions/remarks.tex}
+    \newpage
+}
+
+%---------------------------------------------------------------------------------
+% APPENDICES
+%---------------------------------------------------------------------------------
+\appendix
+
+
+\end{document}
