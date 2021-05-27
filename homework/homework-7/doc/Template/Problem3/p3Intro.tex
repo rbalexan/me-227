@@ -1,0 +1,27 @@
+\secPr{Simulating and Tuning Vehicle Setup}
+
+Through previous homeworks, you've built up a nonlinear vehicle simulator to analyze vehicle behavior and design
+autonomous controllers. As you saw in the project, this simulator captures a good amount of detail of the vehicle's real
+behavior, but not all of it. In this question we will add one more level of complexity by accounting for weight transfer
+and roll effects. We have supplied all of the code you need for this Problem in the \verb!Problem3/! directory included
+in the \verb!hw7.zip! file on Canvas. 
+
+In this problem we will simulate Niki racing through the hairpin corner you saw in
+\pref{How to Race Through the Hairpin Corner}. 
+It is important to note that Niki is front wheel drive; this will frame your analysis of Niki's behavior through the
+manuever. The simulation will run for 14 seconds. By keeping the simulation time the same, we can compare the value of
+$s$ reached when the simulation ends. A higher value of $s$ means we made greater progress through the corner, and
+consequently did a better job navigating the corner.
+
+
+The simulator included here is essentially your nonlinear vehicle simulator with the weight transfer and effective
+friction calculation functions you wrote in \pref{Calculating Weight Transfer and Effective Friction Coefficient}.  This is all conducted using the MF tire model, not the modified Fiala Model we've used in previous assignments. 
+
+When asked you will just need to comment/uncomment different roll stiffness and brake distribution combinations in the
+\verb!simulator.m! script and run the simulation to see how a different setup affects you performance through the
+corner.  You will then need to implement aerodynamic effects in \verb!aero_effects.m! from a splitter and wing that we'll mount on Niki.
+
+\iftoggle{condensed}{}{
+    \newpage
+}
+

@@ -1,0 +1,18 @@
+\secPr{Calculating Weight Transfer and Effective Friction Coefficient}
+
+When modeling vehicle behavior at the limits, there are three new phenomena we need to account for which we have not
+simulated previously. These are:
+
+\begin{itemize}
+    \item Longitudinal load transfer
+    \item Lateral load transfer
+    \item Friction as a function of tire normal load
+\end{itemize}
+
+In class we derived equations for lateral and longitudinal weight transfer. To combine them, simply calculate the
+longitudinal weight transfer from the longitudinal acceleration and the lateral weight transfer from the lateral
+accleration and sum the effects on each wheel. 
+
+Be careful when calculating the lateral load transfer term proportional to the roll center height.  Think about what the proper weight or normal force is to use for this term.  If you understand the static roll model and its underlying assumptions, there is a clear answer here.
+
+\vspace*{0.5cm}

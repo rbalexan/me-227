@@ -1,0 +1,26 @@
+%---------------------------------------------------------------------------------
+% QUESTION 2.B
+%---------------------------------------------------------------------------------
+\secGR{Calculating Effective Friction}
+
+Follow the prompts on MATLAB Grader to create a function to calculate the effective friction available at each axle.
+
+
+You should use the following relationship for friction coefficient as a function of normal load to get the friction at
+each tire:
+
+\al{
+    \mu &= 1.25 - (\num{4.0e-5})F_z
+}
+
+You can then find the effective friction coefficient for each axle by taking a weighted sum of the left and right tires:
+
+\al{
+    \mu_{eff} = \frac{\mu_l F_{zl} + \mu_r F_{zr}}{F_{zl} + F_{zr}}
+}
+
+\iftoggle{solution}{
+    \input{Solutions/matlabgrader.tex}
+}
+
+\newpage

@@ -1,0 +1,74 @@
+%---------------------------------------------------------------------------------
+% QUESTION 2.C
+%---------------------------------------------------------------------------------
+\secGS{How Does Weight Transfer Affect Friction}
+
+In the "Run Function" section of the \GRno{} assignment \qrefGR{Calculating Effective Friction}, there are three
+combinations of roll stiffness as listed in Table \ref{Table:RollParams} below.
+
+\renewcommand{\arraystretch}{1.25}
+\begin{table}[h!]
+    \centering
+    \begin{tabular}{| c | c | c|}
+        \hline
+        \bld{Combination} & \bld{Parameter} & \bld{Value} \\[5pt]
+        \hline\hline
+        Combination A  &   Front Roll Stiffness $K_{\phi f}$   &    40,000 \si{\N\m/\radian} \\
+                       &   Rear Roll Stiffness $K_{\phi r}$   &    80,000 \si{\N\m/\radian} \\\hline
+        Combination B  &   Front Roll Stiffness $K_{\phi f}$   &    90,000 \si{\N\m/\radian} \\
+                       &   Rear Roll Stiffness $K_{\phi r}$   &    30,000 \si{\N\m/\radian} \\\hline
+        Combination C  &   Front Roll Stiffness $K_{\phi f}$   &    70,000 \si{\N\m/\radian} \\
+                       &   Rear Roll Stiffness $K_{\phi r}$   &    50,000 \si{\N\m/\radian} \\\hline
+    \end{tabular}
+    \caption{Roll Stiffness Combinations}
+    \label{Table:RollParams}
+\end{table}
+\renewcommand{\arraystretch}{1}
+
+A quick way to gain intuition about the effects of roll stiffness is to see how the car behaves at a
+constant lateral acceleration. Here we've set up a scenario where the vehicle is cornering at 0.9g. Run your function
+and answer the following questions for each combination of roll stiffnesses:
+
+\begin{enumerate}
+    \item What is the roll angle at 0.9g lateral acceleration?
+    \item How much load is on each tire when the vehicle is cornering at 0.9g?
+    \item What are the front and rear friction coefficients when the vehicle is cornering at 0.9g?
+\end{enumerate}
+
+
+\vspace*{0.5cm}
+
+
+\expect{Answer the questions about the vehicle's behavior for each combination of roll stiffnesses.}
+
+
+\iftoggle{condensed}{
+    \vspace*{0.5cm}
+}{
+    \subsubsection*{Solution:}
+}
+
+\iftoggle{solution}{
+    \input{Solutions/Problem2/problem2c.tex}
+}
+
+\iftoggle{template}{
+    \begin{solutionorbox}[3.5in]
+    \end{solutionorbox}
+}
+
+\iftoggle{student}{
+%---------------------------------------------------------------------------------
+% STUDENT: BEGIN WORK
+%---------------------------------------------------------------------------------
+
+
+% Please box final answer
+
+%---------------------------------------------------------------------------------
+% STUDENT: END WORK
+%---------------------------------------------------------------------------------
+}
+
+\newpage
+

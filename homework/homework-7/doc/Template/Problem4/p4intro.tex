@@ -1,0 +1,27 @@
+\secPr{Tricking Out Niki}
+
+We’ve decided that Niki needs an upgrade.  You are to mount a full aerodynamic-enhancing body kit on Niki. Let's envision Niki looking something like this:
+
+\begin{center}
+\includegraphics[width=400pt]{Template/Problem4/problem4_gti.jpg}
+\textit{https://www.rtheorymotorsports.com/shop/mk7-golf-tsigtir-rear-wing-kit}
+\end{center}
+
+We added a front splitter and a rear wing.  The additional downforce for each of these can be modelled as:
+
+\begin{center}
+    $$F_{down} = \frac{1}{2}*C_{LA}*\rho*U_x^2$$
+\end{center}
+
+$C_{LA}$ is the coefficient of lift for that wing.  $\rho$ is the air density.
+
+
+This may look familiar to one of the feedforward components of the longitudinal controller you implemented in the project.  And in fact, we can use the same equation with different coefficients (where $C_{DA}$ is the coefficient of drag) to model the additional drag caused by the new wings:
+
+\begin{center}
+    $$F_{drag} = \frac{1}{2}*C_{DA}*\rho*U_x^2$$
+\end{center}
+
+\iftoggle{condensed}{}{
+    \newpage
+}
